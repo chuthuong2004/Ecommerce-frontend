@@ -1,0 +1,21 @@
+const routes = {
+    home: '/',
+    women: '/women',
+    men: '/men',
+    kids: '/kids',
+    trademark: '/thuong-hieu',
+    sale: '/special-deal',
+    newIn: '/collections/new-arrival',
+    login: '/dang-nhap',
+    register: '/dang-ky',
+    product: '/san-pham/:product',
+    cart: '/gio-hang',
+    checkingOrder: '/kiem-tra-don-hang',
+    payment: '/thanh-toan',
+    account: '/tai-khoan',
+    order: '/tai-khoan/don-hang',
+    changePassword: '/tai-khoan/doi-mat-khau',
+    address: '/tai-khoan/dia-chi',
+    policy: '/pages/chinh-sach-bao-mat',
+};
+export default routes;

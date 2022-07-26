@@ -1,0 +1,136 @@
+.container {
+    color: #777777;
+    width: var(--default-layout-width);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    .row {
+        padding: 1rem;
+        .content {
+            display: block;
+            color: #777777;
+            font-size: 1.4rem;
+        }
+        .time {
+            padding: 0.4rem 0;
+        }
+        &:nth-child(odd) {
+            width: 28%;
+        }
+        &:nth-child(even) {
+            width: 22%;
+        }
+        .title {
+            text-transform: uppercase;
+            color: black;
+            margin: 0.5rem 0;
+        }
+        .form {
+            display: flex;
+            margin: 1rem 0;
+            input {
+                padding: 5px 1rem;
+                font-size: 1.4rem;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .btn-signup {
+                color: white;
+                background-color: black;
+                text-transform: uppercase;
+                padding: 0 1rem;
+                font-weight: 600;
+                font-size: 1.4rem;
+            }
+        }
+        .icons {
+            display: flex;
+            .tippy-social {
+                font-size: 1.1rem !important;
+                color: #333 !important;
+            }
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 2px;
+                cursor: pointer;
+            }
+            .facebook {
+                background-color: #3a589d;
+            }
+            .instagram {
+                background-color: #3b6994;
+            }
+            .twitter {
+                background-color: #2478ba;
+            }
+            .email {
+                background-color: #111111;
+            }
+            .phone {
+                background-color: #51cb5a;
+            }
+            .linkedin {
+                background-color: #0072b7;
+            }
+        }
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            font-size: 1.4rem;
+            &:hover {
+                color: black;
+                transition: all 0.2s ease;
+            }
+            .icon-contact {
+                color: black;
+                margin-right: 1rem;
+            }
+        }
+        .download {
+            display: flex;
+            margin-top: 1rem;
+            .img-qr {
+                width: 6rem;
+                height: 6rem;
+                margin-right: 1rem;
+            }
+            &-app {
+                font-weight: 500;
+                .app-store {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.4rem;
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+                img {
+                    width: 10rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.bottom {
+    background-color: #5b5b5b;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    p {
+        font-size: 1.4rem;
+        color: #bbb8b8;
+        font-weight: 400;
+    }
+}
+.tippy-social {
+    font-size: 1.2rem;
+}
