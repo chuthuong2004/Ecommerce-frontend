@@ -1,12 +1,9 @@
-import { faCartShopping, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { useEffect, useState } from 'react';
 import config from './../../../config';
 import { Wrapper as PopperWrapper } from '../../../components/Popper';
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import {
     BagActiveIcon,
     BagIcon,
@@ -19,7 +16,7 @@ import {
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import HeadlessTippy from '@tippyjs/react/headless';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/Button/';
 import PopUp from '../../../components/PopUp';
 const cx = classNames.bind(styles);
 const links = [
@@ -56,18 +53,20 @@ function Header() {
     const [activeWishList, setActiveWishList] = useState(false);
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
+        // setActiveWishList(false);
         return () => (window.onscroll = null);
     };
     const location = useLocation();
-    const carts = [];
     const handleScrollTop = () => {
         document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     useEffect(() => {
         if (location.pathname === config.routes.cart) {
             setActiveProfile(false);
-            setActiveWishList(false);
         }
+        setActiveWishList(false);
+
+        handleScrollTop();
     }, [location.pathname]);
     const handleClickActive = (direction) => {
         if (direction === 'account') {
@@ -77,6 +76,9 @@ function Header() {
             setActiveWishList(!activeWishList);
             setActiveProfile(false);
         }
+    };
+    const toggleModal = () => {
+        setActiveWishList(!activeWishList);
     };
     return (
         <header className={isScrolled ? cx('wrapper', 'sticky') : cx('wrapper')}>
@@ -184,7 +186,7 @@ function Header() {
                             </Tippy>
                         </HeadlessTippy>
                     </div>
-                    <div onClick={() => handleClickActive('wishlist')} className={cx('wishlist')}>
+                    <div className={cx('wishlist')}>
                         <Tippy
                             placement="bottom"
                             delay={100}
@@ -194,12 +196,19 @@ function Header() {
                                 </span>
                             }
                         >
-                            <div className={cx('icons', activeWishList && 'active')}>
+                            <div
+                                onClick={() => handleClickActive('wishlist')}
+                                className={cx('icons', activeWishList && 'active')}
+                            >
                                 <HeartIcon className={cx('icon')} />
                                 <HeartActiveIcon className={cx('icon-active')} />
                             </div>
                         </Tippy>
-                        {activeWishList && <PopUp />}
+                        <PopUp
+                            activeWishList={activeWishList}
+                            setActiveWishList={setActiveWishList}
+                            toggleModal={toggleModal}
+                        />
                     </div>
                     <Link onClick={() => handleClickActive('cart')} to={config.routes.cart} className={cx('cart')}>
                         <Tippy
@@ -214,7 +223,14 @@ function Header() {
                             <div className={cx('icons', location.pathname === config.routes.cart && 'active')}>
                                 <BagIcon className={cx('icon')} />
                                 <BagActiveIcon className={cx('icon-active')} />
-                                <span className={cx('quantity-item')}>12</span>
+                                <span
+                                    className={cx(
+                                        'quantity-item',
+                                        location.pathname === config.routes.cart && 'active',
+                                    )}
+                                >
+                                    12
+                                </span>
                             </div>
                         </Tippy>
                     </Link>

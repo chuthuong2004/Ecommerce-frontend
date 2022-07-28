@@ -18,6 +18,8 @@
     }
     &.disabled {
         pointer-events: none;
+        color: var(--primary);
+        background-color: rgb(216, 204, 204);
         opacity: 0.5;
     }
 }
@@ -74,10 +76,12 @@
 // Button sizes
 .small {
     min-width: 88px;
-    padding: 4px 16px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .large {
     min-width: 148px;
-    padding: 14px 16px;
+    padding: 20px 16px;
 }

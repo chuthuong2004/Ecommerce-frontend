@@ -1,0 +1,97 @@
+.container {
+    margin-bottom: 20px;
+    display: flex;
+    .image-wrapper {
+        img {
+            width: 100px;
+            height: 140px;
+        }
+    }
+    .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .brand {
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 12px;
+            }
+            .close {
+                letter-spacing: 1px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+        .product-name {
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .product-price {
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+            .price {
+                font-size: 12px;
+                font-weight: 700;
+                margin-right: 5px;
+            }
+            del {
+                font-size: 12px;
+                margin-left: 5px;
+                display: none;
+            }
+            &.hasSale > .price {
+                background-color: #faff19;
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            &.hasSale > del {
+                display: block;
+            }
+        }
+        .variant-select {
+            display: flex;
+            align-items: flex-start;
+            font-size: 12px;
+            justify-content: space-between;
+            letter-spacing: 1px;
+            padding-top: 0;
+            .product-variant-color {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                flex: 1;
+                margin: 10px 0 0;
+            }
+            .product-variant-size {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                flex: 1;
+                margin: 10px 0 0;
+                select {
+                    width: 100%;
+                    padding: 5px;
+                    font-size: 12px;
+                    border: 1px solid #767676;
+                    border-radius: 2px;
+                }
+            }
+        }
+        .product-actions {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+}

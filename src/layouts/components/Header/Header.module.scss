@@ -165,6 +165,9 @@
                     flex-direction: column;
                 }
             }
+            .wishlist {
+                position: relative;
+            }
             .icons {
                 position: relative;
                 cursor: pointer;
@@ -200,8 +203,15 @@
                     align-items: center;
                     border-radius: 50%;
                     background-color: var(--primary);
+                    border: 1px solid transparent;
                     padding: 2px;
                     color: white;
+                    transition: all 0.6s ease-in-out;
+                    &.active {
+                        color: var(--primary);
+                        border-color: var(--primary);
+                        background-color: white;
+                    }
                 }
                 &.active > .icon {
                     opacity: 0;

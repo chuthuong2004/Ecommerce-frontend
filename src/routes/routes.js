@@ -7,6 +7,7 @@ import Product from './../pages/Product';
 import Account from '../pages/Account';
 import Cart from '../pages/Cart/';
 import Payment from './../pages/Payment/Payment';
+import Login from '../pages/Login/Login';
 // public routes
 const publicRoutes = [
     {
@@ -28,6 +29,16 @@ const publicRoutes = [
     {
         path: config.routes.payment,
         component: Payment,
+    },
+    {
+        path: config.routes.login,
+        component: Login,
+        layout: null,
+    },
+    {
+        path: config.routes.register,
+        component: Login,
+        layout: null,
     },
 ];
 const privateRoutes = [];

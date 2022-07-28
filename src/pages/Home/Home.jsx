@@ -4,7 +4,7 @@ import styles from './Home.module.scss';
 const cx = classNames.bind(styles);
 function Home() {
     return (
-        <div className={cx('container')}>
+        <div style={{ height: '2000px' }} className={cx('container')}>
             <Blog />
         </div>
     );
