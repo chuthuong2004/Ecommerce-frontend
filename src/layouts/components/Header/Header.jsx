@@ -9,6 +9,7 @@ import {
     BagIcon,
     HeartActiveIcon,
     HeartIcon,
+    LogoIcon,
     SearchIcon,
     UserActiveIcon,
     UserIcon,
@@ -85,7 +86,7 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('nav-left')}>
                     <Link to={config.routes.home} className={cx('logo')}>
-                        chuthuong online
+                        <LogoIcon height="40" />
                     </Link>
                 </div>
                 <div className={cx('nav-center')}>

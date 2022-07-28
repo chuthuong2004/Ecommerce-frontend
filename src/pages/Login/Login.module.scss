@@ -90,6 +90,15 @@
                             transform: translateX(100%);
                         }
                     }
+                    .inputs {
+                        // background-color: red;
+                        .register-desc {
+                            font-size: 12px;
+                            // margin-top: 25px;
+                            margin: 25px 0 10px;
+                            text-align: center;
+                        }
+                    }
                 }
             }
         }
