@@ -152,20 +152,14 @@ function Header() {
                                             </li>
                                         </ul>
                                         <div className={cx('buttons')}>
-                                            <Button
-                                                primary
-                                                textUpperCase
-                                                to={config.routes.login}
-                                                children={'Đăng Nhập'}
-                                            />
+                                            <Button primary textUpperCase to={config.routes.login}>
+                                                Đăng Nhập
+                                            </Button>
                                         </div>
                                         <div className={cx('buttons')}>
-                                            <Button
-                                                primary
-                                                textUpperCase
-                                                to={config.routes.register}
-                                                children={'Tạo Tài Khoản'}
-                                            />
+                                            <Button primary textUpperCase to={config.routes.register}>
+                                                Tạo Tài Khoản
+                                            </Button>
                                         </div>
                                     </PopperWrapper>
                                 );

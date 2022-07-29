@@ -199,13 +199,10 @@ const Login = () => {
                                                 </div>
                                             </>
                                         )}
-                                        <Button
-                                            onClick={handleClick}
-                                            className={cx('btn-action')}
-                                            large
-                                            primary
-                                            children={titleButton}
-                                        />
+                                        <Button onClick={handleClick} className={cx('btn-action')} large primary>
+                                            {titleButton}
+                                        </Button>
+
                                         {!activeSignup && (
                                             <div className={cx('redirect-form')}>
                                                 <span
@@ -224,18 +221,20 @@ const Login = () => {
                                                 className={cx('btn__facebook')}
                                                 large
                                                 primary
-                                                children="Đăng nhập bằng facebook"
                                                 icon={<FacebookIcon width="18" height="18" />}
-                                            />
+                                            >
+                                                Đăng nhập bằng facebook
+                                            </Button>
                                         </div>
                                         <div className={cx('btn')}>
                                             <Button
                                                 className={cx('btn__google')}
                                                 large
                                                 primary
-                                                children="Đăng nhập bằng google"
                                                 icon={<GoogleIcon width="18" height="18" />}
-                                            />
+                                            >
+                                                Đăng nhập bằng google
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>
@@ -247,15 +246,18 @@ const Login = () => {
                                         </div>
                                         <Input label="email" type="email" name="email" />
                                         <div className={cx('btn')}>
-                                            <Button large primary children="xác thực email" />
+                                            <Button large primary>
+                                                xác thực email
+                                            </Button>
                                         </div>
                                         <div className={cx('btn', 'btn-forgot')}>
                                             <Button
                                                 onClick={() => setOpenForgotPassword(false)}
                                                 leftIcon={<LeftIcon />}
                                                 large
-                                                children="trở về đăng nhập"
-                                            />
+                                            >
+                                                trở về đăng nhập
+                                            </Button>
                                         </div>
                                     </div>
                                     <div className={cx('register-now')}>
