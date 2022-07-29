@@ -105,7 +105,7 @@ function Header() {
                         <SearchIcon width="2rem" height="2rem" />
                         <span>Tìm kiếm</span>
                     </div>
-                    <div onClick={() => handleClickActive('account')} className={cx('profile')}>
+                    <div className={cx('profile')}>
                         <HeadlessTippy
                             delay={[0, 50]}
                             interactive={true}
@@ -180,7 +180,10 @@ function Header() {
                                     </span>
                                 }
                             >
-                                <div className={cx('icons', activeProfile && 'active')}>
+                                <div
+                                    onClick={() => handleClickActive('account')}
+                                    className={cx('icons', activeProfile && 'active')}
+                                >
                                     <UserIcon className={cx('icon')} />
                                     <UserActiveIcon className={cx('icon-active')} />
                                 </div>
