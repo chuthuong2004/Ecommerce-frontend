@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import Footer from './../components/Footer/Footer';
 import config from './../../config';
+import ScrollToTop from '../components/ScrollToTop';
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
     return (
@@ -15,6 +16,7 @@ function DefaultLayout({ children }) {
                 alt=""
             />
             {/* Header */}
+            <ScrollToTop />
             <Header />
             {/* Container */}
             <div className={cx('container')}>

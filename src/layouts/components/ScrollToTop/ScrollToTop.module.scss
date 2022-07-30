@@ -1,0 +1,36 @@
+.back-to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    transition: all 0.5s ease-in-out;
+    .icon {
+        cursor: pointer;
+    }
+    &.active {
+        // transform: translateY(-50px);
+        animation: fadeInTop 0.5s ease-in-out;
+    }
+    &.not-active {
+        opacity: 0;
+        // transform: translateY(50px);
+        animation: fadeInBottom 0.5s ease-in-out;
+    }
+}
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInBottom {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}

@@ -24,7 +24,6 @@ const NewsLetterFooter = () => {
         checkError(email) && alert('Gửi thành công !');
         checkError(email) && setEmail('');
     };
-    console.log(error);
     return (
         <section className={cx('newsletter-footer')}>
             <div className={cx('newsletter-footer_form')}>
@@ -35,10 +34,10 @@ const NewsLetterFooter = () => {
                     </p>
                     <div className={cx('newsletter-footer_form_left_gender')}>
                         <div className={cx('checkbox')}>
-                            <Input type="checkbox" name="gender" value="female" label="Nữ" />
+                            <Input type="radio" name="gender" value="female" label="Nữ" />
                         </div>
                         <div className={cx('checkbox')}>
-                            <Input type="checkbox" name="gender" value="male" label="Nam" />
+                            <Input type="radio" name="gender" value="male" label="Nam" />
                         </div>
                     </div>
                 </div>
