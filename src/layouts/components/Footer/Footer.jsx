@@ -2,17 +2,22 @@ import styles from './Footer.module.scss';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 import {
-    FacebookIcon,
     FacebookLiteIcon,
     InstagramIcon,
     LogoIcon,
     MomoIcon,
+    ReePayIcon,
+    ShopeePayIcon,
+    VNPayIcon,
     YoutubeIcon,
+    ZaloIcon,
 } from './../../../components/Icons/Icons';
+import NewsLetterFooter from '../NewsLetterFooter/NewsLetterFooter';
 const cx = classNames.bind(styles);
 function Footer() {
     return (
         <>
+            <NewsLetterFooter />
             <div className={cx('social-footer')}>
                 <div className={cx('container-fluid')}>
                     <div className={cx('logo')}>
@@ -46,22 +51,22 @@ function Footer() {
                         </li>
                         <li>
                             <a href="">
-                                <MomoIcon />
+                                <ZaloIcon />
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                <MomoIcon />
+                                <ShopeePayIcon />
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                <MomoIcon />
+                                <VNPayIcon />
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                <MomoIcon />
+                                <ReePayIcon />
                             </a>
                         </li>
                     </ul>

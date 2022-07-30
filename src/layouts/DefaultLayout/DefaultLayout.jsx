@@ -9,7 +9,11 @@ function DefaultLayout({ children }) {
     return (
         <div className={cx('wrapper')}>
             {/* bannner */}
-            <img src="https://file.hstatic.net/1000284478/file/header_39a72a810505498cbc66e705fece7758.png" alt="" />
+            <img
+                className={cx('img-banner')}
+                src="https://file.hstatic.net/1000284478/file/header_39a72a810505498cbc66e705fece7758.png"
+                alt=""
+            />
             {/* Header */}
             <Header />
             {/* Container */}

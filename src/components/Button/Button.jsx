@@ -19,7 +19,6 @@ function Button({
     rightIcon,
     icon,
     onClick,
-    textUpperCase = false,
     ...passProps
 }) {
     let Comp = 'button';
@@ -54,7 +53,6 @@ function Button({
         disabled,
         rounded,
         [className]: className,
-        textUpperCase,
     });
     return (
         <Comp className={classes} {...props}>

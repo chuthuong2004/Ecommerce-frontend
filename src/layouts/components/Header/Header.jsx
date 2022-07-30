@@ -152,12 +152,12 @@ function Header() {
                                             </li>
                                         </ul>
                                         <div className={cx('buttons')}>
-                                            <Button primary textUpperCase to={config.routes.login}>
+                                            <Button primary to={config.routes.login}>
                                                 Đăng Nhập
                                             </Button>
                                         </div>
                                         <div className={cx('buttons')}>
-                                            <Button primary textUpperCase to={config.routes.register}>
+                                            <Button primary to={config.routes.register}>
                                                 Tạo Tài Khoản
                                             </Button>
                                         </div>

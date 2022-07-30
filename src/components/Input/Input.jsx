@@ -13,7 +13,7 @@ const Input = ({
     onChange,
     ...passProps
 }) => {
-    const inputCheckbox = useId();
+    const idInput = useId();
     const [displayed, setDisplayed] = useState(false);
     const handleClickEye = () => {
         setDisplayed(!displayed);
@@ -27,13 +27,11 @@ const Input = ({
     }, [!props.value]);
     return (
         <>
-            {type === 'checkbox' ? (
+            {type === 'checkbox' || type === 'radio' ? (
                 <div className={cx('checkbox')}>
-                    <input type={type} name="" id={inputCheckbox} />
-                    <label htmlFor={inputCheckbox}>
-                        <span>
-                            <CheckIcon className={cx('check-icon')} />
-                        </span>
+                    <input type={type} name="" id={idInput} />
+                    <label htmlFor={idInput}>
+                        <span></span>
 
                         {label}
                     </label>
@@ -41,7 +39,7 @@ const Input = ({
             ) : (
                 <div className={cx('input-container')}>
                     {label && (
-                        <label className={cx('input-label')} htmlFor={name}>
+                        <label className={cx('input-label')} htmlFor={idInput}>
                             {label}
                         </label>
                     )}
@@ -54,7 +52,7 @@ const Input = ({
                         <input
                             type={displayed ? 'text' : type}
                             name={name}
-                            id={name}
+                            id={idInput}
                             placeholder={placeholder}
                             {...props}
                         />

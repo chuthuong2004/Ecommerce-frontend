@@ -512,3 +512,25 @@ export const MomoIcon = ({ width = '3.1rem', height = '2.4rem', className }) => 
         </defs>
     </svg>
 );
+export const ZaloIcon = ({ width = '3.1rem', height = '2.6rem', className }) => (
+    <img style={{ height, width, borderRadius: '2px' }} className={className} src="/images/zalo.png" alt="zalo"></img>
+);
+export const ShopeePayIcon = ({ width = '3.1rem', height = '2.6rem', className }) => (
+    <img
+        style={{ height, width, borderRadius: '2px' }}
+        className={className}
+        src="/images/shopeepay.png"
+        alt="shoppe pay"
+    ></img>
+);
+export const VNPayIcon = ({ width = '3.1rem', height = '2.6rem', className }) => (
+    <img style={{ height, width, borderRadius: '2px' }} className={className} src="/images/vnpay.png" alt="VNPay"></img>
+);
+export const ReePayIcon = ({ width = '3.1rem', height = '2.6rem', className }) => (
+    <img
+        style={{ height, width, borderRadius: '2px' }}
+        className={className}
+        src="/images/reepay.png"
+        alt="ReePay"
+    ></img>
+);

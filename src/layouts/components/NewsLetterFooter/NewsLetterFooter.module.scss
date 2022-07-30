@@ -1,0 +1,72 @@
+.newsletter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+.newsletter-footer {
+    background-color: #f7f8f9;
+    color: var(--primary);
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 40px 0;
+    line-height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+    &_form {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        width: var(--default-layout-width);
+        gap: 70px;
+        &_left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .newsletter-footer_form_left_gender {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 0 25px;
+                text-align: center;
+                .checkbox:first-child {
+                    margin-right: 50px;
+                }
+            }
+            p {
+                font-weight: 300;
+                margin: 10px 35px 30px;
+                text-align: center;
+            }
+            span {
+                font-size: 32px;
+                letter-spacing: 4px;
+                line-height: 38px;
+                text-align: center;
+            }
+        }
+        &_right {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .input {
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+    }
+}

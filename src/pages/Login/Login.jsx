@@ -22,6 +22,9 @@ const Login = () => {
         password: '',
         phone: '',
     });
+    const [dataForgotPassword, setDataForgotPassword] = useState({
+        email: '',
+    });
     const [errorInput, setErrorInput] = useState({
         email: '',
         password: '',
@@ -50,7 +53,7 @@ const Login = () => {
             password: '',
             phone: '',
         });
-    }, [location.pathname]);
+    }, [location.pathname, openForgotPassword]);
     const handleChangeLogin = useCallback(
         (e) => {
             setDataLogin({
@@ -69,22 +72,40 @@ const Login = () => {
         },
         [dataRegister],
     );
+    const handleChangeForgot = useCallback(
+        (e) => {
+            setDataForgotPassword({ [e.target.name]: e.target.value });
+        },
+        [dataForgotPassword],
+    );
     const checkInputEmpty = (data) => {
         setErrorInput({
-            email: !data.email && 'Vui lòng nhập email',
+            email: !data.email && 'Vui lòng nhập email.',
             password:
-                (!data.password && 'Vui lòng nhập mật khẩu') ||
-                (data.password && data.password.length < 8 && 'Mật khẩu phải có ít nhất 8 ký tự'),
-            phone: !data.phone && 'Vui lòng nhập số điện thoại',
+                (!data.password && 'Vui lòng nhập mật khẩu.') ||
+                (data.password && data.password.length <= 8 && 'Mật khẩu phải có ít nhất 8 ký tự.'),
+            phone: !data.phone && 'Vui lòng nhập số điện thoại.',
         });
         return data.email && data.password && data.password.length >= 8;
     };
     const handleClick = () => {
         const handleLogin = () => {
             checkInputEmpty(dataLogin) && alert('OK');
+            checkInputEmpty(dataLogin) &&
+                setDataLogin({
+                    email: '',
+                    password: '',
+                });
         };
         const handleRegister = () => {
             checkInputEmpty(dataRegister) && dataRegister.phone && alert('OK res');
+            checkInputEmpty(dataRegister) &&
+                dataRegister.phone &&
+                setDataRegister({
+                    email: '',
+                    password: '',
+                    phone: '',
+                });
         };
         if (location.pathname === config.routes.login) {
             handleLogin();
@@ -93,7 +114,19 @@ const Login = () => {
         }
     };
     const handleBlur = (e) => {
-        setErrorInput({ ...errorInput, [e.target.name]: '' });
+        setErrorInput({
+            ...errorInput,
+            [e.target.name]: e.target.value
+                ? e.target.name === 'password'
+                    ? e.target.value.length < 8 && 'Mật khẩu phải có ít nhất 8 ký tự.'
+                    : ''
+                : 'Trường này là bắt buộc.!!!',
+        });
+    };
+    const handleForgotPassword = () => {
+        checkInputEmpty(dataForgotPassword);
+        dataForgotPassword.email && alert('Forgot Password');
+        dataForgotPassword.email && setDataForgotPassword({ email: '' });
     };
     return (
         <section className={cx('login-section')}>
@@ -244,9 +277,17 @@ const Login = () => {
                                         <div className={cx('form-desc')}>
                                             Vui lòng nhập email của bạn ở đây để nhận hướng dẫn đặt lại mật khẩu.
                                         </div>
-                                        <Input label="email" type="email" name="email" />
+                                        <Input
+                                            label="email"
+                                            type="email"
+                                            name="email"
+                                            error={errorInput}
+                                            onChange={handleChangeForgot}
+                                            onBlur={handleBlur}
+                                            value={dataForgotPassword.email}
+                                        />
                                         <div className={cx('btn')}>
-                                            <Button large primary>
+                                            <Button onClick={handleForgotPassword} large primary>
                                                 xác thực email
                                             </Button>
                                         </div>
