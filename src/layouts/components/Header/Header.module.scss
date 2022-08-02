@@ -6,7 +6,6 @@
     background-color: var(--white);
     z-index: 10;
     padding: 0 4rem;
-
     &.sticky {
         position: fixed;
         top: 0;
@@ -45,6 +44,7 @@
             ul {
                 display: flex;
                 align-items: center;
+                gap: 10px;
                 li {
                     text-transform: uppercase;
                     font-weight: 600;
@@ -54,7 +54,10 @@
                     line-height: 2rem;
                     letter-spacing: 1px;
                     color: var(--primary);
+                    position: relative;
                     transition: all 0.4s ease-in-out;
+                    display: block;
+
                     &:hover {
                         color: var(--black);
                         font-weight: 600;
