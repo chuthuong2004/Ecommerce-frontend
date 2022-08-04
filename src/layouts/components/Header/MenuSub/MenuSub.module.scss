@@ -3,16 +3,18 @@
     height: 100%;
     .menu-sub {
         position: fixed;
-        top: 0;
+        top: -10px;
         left: 0;
         right: 0;
         width: 100%;
         z-index: 999999;
         letter-spacing: 1px;
         line-height: 20px;
-        padding: 40px 8% 0;
+        padding: 40px 8%;
         text-align: left;
         transition: all 0.3s ease-in-out;
+        background-color: #fff;
+        z-index: 10;
         .menu-sub-lv2 {
             display: flex;
             justify-content: center;

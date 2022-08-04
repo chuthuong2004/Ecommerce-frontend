@@ -1,8 +1,8 @@
 const routes = {
     home: '/',
-    women: '/women',
-    men: '/men',
-    kids: '/kids',
+    women: '/?view=women',
+    men: '/?view=men',
+    kids: '/?view=kids',
     trademark: '/thuong-hieu',
     sale: '/special-deal',
     newIn: '/collections/new-arrival',

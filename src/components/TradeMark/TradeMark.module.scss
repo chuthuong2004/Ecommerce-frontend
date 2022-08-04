@@ -1,0 +1,75 @@
+.trade-mark {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
+    display: flex;
+    justify-content: center;
+    &-wrapper {
+        width: var(--default-layout-width);
+        height: 100%;
+        .block-title {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            line-height: 35px;
+            padding: 80px 0 60px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .slides {
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 21px;
+            padding-bottom: 20px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            .slide-trademark {
+                display: grid !important;
+                grid-template-columns: repeat(5, 1fr);
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
+.container-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        margin: 0 5px;
+        transition: all 0.5s ease-in-out;
+        background-color: var(--primary);
+        cursor: pointer;
+        button {
+            // display: none;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            position: absolute;
+            transform: translateX(-6px);
+            top: 0;
+            opacity: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #ffffff;
+            margin: 0 5px;
+            transition: all 0.5s ease-in-out;
+            background-color: var(--primary);
+        }
+    }
+}

@@ -7,7 +7,7 @@
 .modal,
 .overlay {
     width: 100vw;
-    height: calc(100vh - var(--top-height-modal));
+    top: var(--default-layout-header-height);
     left: 0;
     right: 0;
     bottom: 0;
@@ -32,7 +32,7 @@
 }
 .modal-content {
     position: fixed;
-    top: 65px;
+    top: var(--default-layout-header-height);
     right: 0;
     bottom: 0;
     transform: translateY(-50%, -50%);
