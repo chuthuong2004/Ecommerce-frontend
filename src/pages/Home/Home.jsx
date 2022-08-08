@@ -1,13 +1,11 @@
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { Link } from 'react-router-dom';
-
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Men from './components/Men';
 import Women from './components/Women';
-import TradeMark from './../../components/TradeMark/TradeMark';
 import config from './../../config/index';
 import Kids from './components/Kids';
+import TradeMarkSlide from './../../components/TradeMarkSlide';
 const cx = classNames.bind(styles);
 function Home() {
     const useQuery = () => new URLSearchParams(useLocation().search);
@@ -49,7 +47,7 @@ function Home() {
             {query.get('view') === 'men' && <Men />}
             {query.get('view') === 'women' && <Women />}
             {query.get('view') === 'kids' && <Kids />}
-            <TradeMark />
+            <TradeMarkSlide />
         </section>
     );
 }

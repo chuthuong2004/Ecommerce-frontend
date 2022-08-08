@@ -23,13 +23,13 @@ import {
     TopMan,
     TopShop,
     WeekendMaxMara,
-} from './Logo/LogoTradeMark';
-import styles from './TradeMark.module.scss';
+} from './LogoTradeMark/LogoTradeMark';
+import styles from './TradeMarkSlide.module.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './CustomSlick.scss';
 const cx = classNames.bind(styles);
-const TradeMark = () => {
+const TradeMarkSlide = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -37,6 +37,7 @@ const TradeMark = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
+        draggable: true,
         autoplaySpeed: 3000,
         dotsClass: cx('container-dots'),
     };
@@ -123,4 +124,4 @@ const TradeMark = () => {
     );
 };
 
-export default TradeMark;
+export default TradeMarkSlide;

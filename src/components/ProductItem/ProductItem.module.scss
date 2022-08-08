@@ -1,0 +1,89 @@
+.container {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding-right: 20px;
+    .wrapper {
+        .product-img {
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+            .img {
+                width: 100%;
+                height: 100%;
+            }
+            .discount {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 3px 6px;
+                cursor: default;
+            }
+            .wishlist {
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                &.active > .heart {
+                    display: none;
+                }
+                &.active > .heart-active {
+                    display: block;
+                }
+                .heart,
+                .heart-active {
+                    transition: all 2s ease-in-out;
+                }
+                .heart-active {
+                    display: none;
+                }
+            }
+        }
+        .trademark-name {
+            font-weight: 700;
+            line-height: 24px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .product-name {
+            min-height: 48px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .quantity-color {
+            margin-bottom: 20px;
+            display: block;
+        }
+        .product-price {
+            .price {
+                font-weight: 700;
+                line-height: 24px;
+                padding: 5px;
+                &.hasSale {
+                    background-color: #faff19;
+                }
+            }
+            del {
+                line-height: 14px;
+                margin-left: 12px;
+            }
+        }
+        .td-underline {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    .trademark-img {
+        width: 100%;
+        height: 100%;
+    }
+    .products-container {
+        width: 100vw;
+        height: 100%;
+        padding: 0 80px;
+        .list-products {
+            padding: 40px 0 60px;
+            margin-right: -80px;
+            letter-spacing: 1px;
+            line-height: 21px;
+            font-size: 14px;
+            .slider {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .btn-all {
+                display: flex !important;
+                width: 30rem !important;
+                height: 60rem;
+                align-items: center;
+                position: relative;
+                .btn {
+                    width: max-content;
+                    position: absolute;
+                    margin-left: 20rem !important;
+                    top: 30%;
+                    right: 40%;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 1px;
+                        bottom: 1rem;
+                        left: 1.2rem;
+                        right: 1.2rem;
+                        background-color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}

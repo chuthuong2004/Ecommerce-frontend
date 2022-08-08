@@ -53,7 +53,7 @@ export const UserActiveIcon = ({ width = '2.4rem', height = '2.4rem', className 
         <path d="M6 18C8.5 20.4999 13.5 21.9999 18 18C15 15.5 10.5 14.0001 6 18Z" fill="white" />
     </svg>
 );
-export const HeartIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+export const HeartIcon = ({ width = '2.4rem', height = '2.4rem', className, stroke = '#2E2E2E' }) => (
     <svg
         width={width}
         height={height}
@@ -64,7 +64,7 @@ export const HeartIcon = ({ width = '2.4rem', height = '2.4rem', className }) =>
     >
         <path
             d="M12.0006 20.25C12.0006 20.25 2.62555 15 2.62555 8.62501C2.62574 7.49826 3.01616 6.40635 3.73044 5.53493C4.44471 4.66351 5.43875 4.06636 6.54354 3.84501C7.64833 3.62367 8.79569 3.79179 9.79054 4.32079C10.7854 4.84979 11.5663 5.70702 12.0006 6.74673L12.0005 6.74673C12.4348 5.70702 13.2157 4.84979 14.2106 4.32079C15.2054 3.79179 16.3528 3.62367 17.4576 3.84501C18.5624 4.06636 19.5564 4.66351 20.2707 5.53493C20.9849 6.40635 21.3754 7.49826 21.3756 8.62501C21.3756 15 12.0006 20.25 12.0006 20.25Z"
-            stroke="#2E2E2E"
+            stroke={stroke}
             strokeLinecap="round"
             strokeLinejoin="round"
         />

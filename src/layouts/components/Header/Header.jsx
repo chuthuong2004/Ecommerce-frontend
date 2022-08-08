@@ -42,8 +42,6 @@ function Header() {
             setActiveProfile(false);
         }
         setActiveWishList(false);
-
-        handleScrollTop();
     }, [location.pathname]);
     const handleClickActive = (direction) => {
         if (direction === 'account') {
