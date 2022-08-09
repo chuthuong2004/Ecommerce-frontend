@@ -21,7 +21,7 @@
 }
 .btn-arrow {
     position: absolute;
-    top: 50%;
+    top: 40%;
     z-index: 1;
     background-color: #ffffff;
     width: 50px;
@@ -30,9 +30,9 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
+    transform: translateY(-100%);
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
     transition: all 1s ease-in-out;
-    transform: translateY(-50%);
     cursor: pointer;
     &:hover {
         background-color: #ffffff;

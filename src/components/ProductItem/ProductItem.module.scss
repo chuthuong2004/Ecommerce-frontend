@@ -4,13 +4,29 @@
     width: 100%;
     padding-right: 20px;
     .wrapper {
+        &:hover > .banner-product > .outer-product-color {
+            height: calc(100% + 1.8rem);
+            opacity: 1;
+        }
         .product-img {
             position: relative;
             height: 100%;
             cursor: pointer;
             .img {
+                position: relative;
                 width: 100%;
                 height: 100%;
+                top: 0;
+                bottom: 0;
+                transition: all 0.5s ease-in-out;
+                height: 100%;
+                opacity: 0;
+                &.is-cached {
+                    opacity: 1;
+                }
+                &.lazyloaded {
+                    position: absolute;
+                }
             }
             .discount {
                 position: absolute;
@@ -45,6 +61,47 @@
                 }
                 .heart-active {
                     display: none;
+                }
+            }
+        }
+        .banner-product {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .banner-img {
+                width: 100%;
+                height: 100%;
+            }
+            .outer-product-color {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.4);
+                height: 0;
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                padding: 8px;
+                gap: 8px;
+                opacity: 0;
+                .product-color-loop {
+                    display: flex;
+                    border: 1px solid transparent;
+                    border-radius: 6px;
+                    height: 100%;
+                    width: 58px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    .product-color-img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:hover {
+                        border-color: var(--primary);
+                    }
+                    &.active {
+                        border-color: var(--primary);
+                    }
                 }
             }
         }

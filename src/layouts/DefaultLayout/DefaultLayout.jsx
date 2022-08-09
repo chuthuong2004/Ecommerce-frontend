@@ -15,7 +15,6 @@ function DefaultLayout({ children }) {
     useEffect(() => {
         const handleScrollTop = () => {
             document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            console.log('render');
         };
         handleScrollTop();
     }, [pathname, query]);
