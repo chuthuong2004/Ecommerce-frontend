@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../Slide/SlickSlide.scss';
+import './TradeMarkProductSlide.scss';
 import { NextArrowIcon, PrevArrowIcon } from '../Icons/Icons';
 import Button from './../Button/Button';
 import { useState } from 'react';
