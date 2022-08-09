@@ -5,6 +5,7 @@
     letter-spacing: 1px;
     line-height: 20px;
     margin-top: 16px;
+    // width: 100%;
     // margin-top: 16px;
     .input-label {
         font-size: 10px;
@@ -55,13 +56,14 @@
             right: 0;
             bottom: -20px;
         }
-        .message-error.error + input {
+        .message-error.error+input {
             transition: all 0.2s ease-in-out;
             border-color: #e24c4c;
             box-shadow: 0px 0px 4px 0px #e24c4c;
         }
     }
 }
+
 .checkbox {
     input {
         color: red;
@@ -77,11 +79,11 @@
     }
     input[type='checkbox']::before {
         /* ...existing styles */
-
         /* Windows High Contrast Mode */
         background-color: CanvasText;
     }
 }
+
 .checkbox {
     margin-top: 16px;
     display: flex;
@@ -102,11 +104,10 @@
             transform: scale(1.2);
         }
     }
-
     input {
         display: none;
     }
-    input + label span {
+    input+label span {
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -131,7 +132,7 @@
             border: none;
         }
     }
-    input:checked + label span {
+    input:checked+label span {
         &:before {
             display: flex;
             align-items: center;

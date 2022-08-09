@@ -8,9 +8,11 @@ import Account from '../pages/Account';
 import Cart from '../pages/Cart/';
 import Payment from './../pages/Payment/Payment';
 import Login from '../pages/Login/Login';
+
+
+
 // public routes
-const publicRoutes = [
-    {
+const publicRoutes = [{
         path: config.routes.home,
         component: Home,
     },
@@ -40,6 +42,7 @@ const publicRoutes = [
         component: Login,
         layout: null,
     },
+
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };

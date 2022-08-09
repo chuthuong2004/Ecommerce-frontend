@@ -2,6 +2,10 @@ import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { useEffect, useRef, useState } from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import HeadlessTippy from '@tippyjs/react/headless';
+
 import config from './../../../config';
 import { Wrapper as PopperWrapper } from '../../../components/Popper';
 import {
@@ -14,12 +18,11 @@ import {
     UserActiveIcon,
     UserIcon,
 } from '../../../components/Icons/Icons';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
-import HeadlessTippy from '@tippyjs/react/headless';
+
 import Button from '../../../components/Button/';
 import PopUp from '../../../components/PopUp';
 import MenuSub from './MenuSub/';
+import Search from './Search';
 import { headerLinks } from '../../../assets/headerLinks';
 const cx = classNames.bind(styles);
 
@@ -28,6 +31,7 @@ function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeProfile, setActiveProfile] = useState(false);
     const [activeWishList, setActiveWishList] = useState(false);
+    const [openSearch, setOpenSearch] = useState(false);
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
         // setActiveWishList(false);
@@ -57,7 +61,11 @@ function Header() {
     };
     return (
         <>
-            <header className={isScrolled ? cx('wrapper', 'sticky') : cx('wrapper')}>
+            <header
+                className={cx('wrapper', {
+                    sticky: isScrolled,
+                })}
+            >
                 <div className={cx('inner')}>
                     <div className={cx('nav-left')}>
                         <Link to={config.routes.home} className={cx('logo')}>
@@ -94,6 +102,7 @@ function Header() {
                             <SearchIcon width="2rem" height="2rem" />
                             <span>Tìm kiếm</span>
                         </div>
+                        <Search />
                         <div className={cx('profile')}>
                             <HeadlessTippy
                                 delay={[0, 50]}
