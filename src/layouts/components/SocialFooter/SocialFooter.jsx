@@ -11,7 +11,7 @@ import {
     VNPayIcon,
     YoutubeIcon,
     ZaloIcon,
-} from './../../../components/Icons/Icons';
+} from './../../../components/Icons';
 const cx = classNames.bind(styles);
 function SocialFooter() {
     return (

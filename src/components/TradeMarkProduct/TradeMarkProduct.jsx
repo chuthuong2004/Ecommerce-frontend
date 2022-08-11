@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './TradeMarkProductSlide.scss';
-import { NextArrowIcon, PrevArrowIcon } from '../Icons/Icons';
+import { NextArrowIcon, PrevArrowIcon } from '../Icons';
 import Button from './../Button/Button';
 import { useState } from 'react';
 import config from '../../config';
@@ -24,7 +24,6 @@ const TradeMarkProduct = ({ trademarkProduct }) => {
             setOpenButtonAll(true);
         }
     };
-    console.log(openButtonAll);
     const NextArrow = (props) => {
         const { className, style, onClick } = props;
         return (

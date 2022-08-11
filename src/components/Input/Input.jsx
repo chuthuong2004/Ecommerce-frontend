@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
-import { EyeIcon, EyeActiveIcon } from '../Icons/Icons';
+import { EyeIcon, EyeActiveIcon } from '../Icons';
 import styles from './Input.module.scss';
-import { CheckIcon } from './../Icons/Icons';
 import { useState, useEffect, memo, useId } from 'react';
 const cx = classNames.bind(styles);
 const Input = ({

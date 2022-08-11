@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
-import { FacebookIcon, GoogleIcon, LeftIcon, LogoIcon } from '../../components/Icons/Icons';
+import { FacebookIcon, GoogleIcon, LeftIcon, LogoIcon } from '../../components/Icons';
 import styles from './Login.module.scss';
 import config from './../../config/';
 import { useState, useEffect, useCallback, useId } from 'react';

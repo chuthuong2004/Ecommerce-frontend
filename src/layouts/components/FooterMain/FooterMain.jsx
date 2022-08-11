@@ -1,6 +1,6 @@
 import styles from './FooterMain.module.scss';
 import classNames from 'classnames/bind';
-import { AppStoreImage, GooglePlayImage } from '../../../components/Icons/Icons';
+import { AppStoreImage, GooglePlayImage } from '../../../components/Icons';
 import { Link } from 'react-router-dom';
 import { colLinks } from '../../../assets/colLinks';
 const cx = classNames.bind(styles);

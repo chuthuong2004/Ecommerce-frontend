@@ -6,7 +6,7 @@ const routes = {
     trademark: '/thuong-hieu',
     sale: '/special-deal',
     newIn: '/collections/new-arrival',
-    collections: '/collections/:category',
+    collections: '/collections',
     login: '/tai-khoan/dang-nhap',
     register: '/tai-khoan/dang-ky',
     product: '/san-pham/:product',

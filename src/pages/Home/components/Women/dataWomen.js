@@ -739,6 +739,7 @@ export const categoriesWomen = [
         categoryDesc:
             'Thoải mái lựa chọn và khẳng định phong cách thời trang sành điệu, cá tính với các item quần áo, đầm váy đến từ các thương hiệu thời trang trong và ngoài nước: Max&Co., MLB, GiGi, Puma,…',
         img: 'https://file.hstatic.net/1000284478/file/nu-trang-phuc_3446f6419c3d4d2bb5099c467d322a68.jpeg',
+        slug: 'trang-phuc-nu',
     },
     {
         _id: uuidv4(),
@@ -746,6 +747,7 @@ export const categoriesWomen = [
         categoryDesc:
             'Tôn vinh vóc dáng xinh đẹp của phái nữ với các mẫu thiết kế giày dép thời trang và hiện đại: giày cao gót, giày sandals, giày thể thao,... đến từ các thương hiệu nổi tiếng như Charles & Keith, Pedro, Puma,…',
         img: 'https://file.hstatic.net/1000284478/file/nu-giay-dep_51b3f8a683394d98995fc8e6b552db1c.jpeg',
+        slug: 'giay-dep-nu',
     },
     {
         _id: uuidv4(),
@@ -753,6 +755,7 @@ export const categoriesWomen = [
         categoryDesc:
             'Với kích thước và kiểu dáng đa dạng, đảm bảo mọi tiện ích và phù hợp nhiều đối tượng, các bộ sưu tập đến từ các thương hiệu: Charles & Keith, Pedro, Marhen.J,... sẽ làm thỏa mãn các nàng.',
         img: 'https://file.hstatic.net/1000284478/file/nu-tui-xach_6e81da7ad0364378a8716ac59393f45c.jpeg',
+        slug: 'tui-vi-nu',
     },
     {
         _id: uuidv4(),
@@ -760,5 +763,6 @@ export const categoriesWomen = [
         categoryDesc:
             'Với kho tàng phụ kiện phong phú như mắt kính, trang sức, mũ nón... đến từ các thương hiệu như Charles & Keith, Ted Baker, The Kooples,... sẽ khiến các fashionista mê mẩn và yêu thích.',
         img: 'https://file.hstatic.net/1000284478/file/nu-phu-kien_5bc3c88075e44cb29f203dc5b5e0c61c.jpeg',
+        slug: 'phu-kien-nu',
     },
 ];

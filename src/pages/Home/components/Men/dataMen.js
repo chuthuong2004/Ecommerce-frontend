@@ -744,6 +744,7 @@ export const categoriesMen = [
         categoryDesc:
             'Thoải mái lựa chọn và khẳng định phong cách thời trang lịch lãm và cá tính dành cho mọi quý ông với các item quần áo đến từ các thương hiệu thời trang quốc tế: DSquared2, Ted Baker, Puma,…',
         img: 'https://file.hstatic.net/1000284478/file/nam-trang-phuc_2ea04cdf7ce14a18a20ef86bc2e23416.png',
+        slug: 'trang-phuc-nam',
     },
     {
         _id: uuidv4(),
@@ -751,6 +752,7 @@ export const categoriesMen = [
         categoryDesc:
             'Giúp mọi quý ông tự tin sải bước với các thiết kế giày dép thời trang, lịch lãm: giày tây, giày sandals, giày thể thao, dép,…đến từ các thương hiệu nổi tiếng như DSquared2, Pedro, Havaianas,…',
         img: 'https://file.hstatic.net/1000284478/file/nam-giay-dep_2e7f953fb7ad4095b520db6ec430bdac.png',
+        slug: 'giay-dep-nam',
     },
     {
         _id: uuidv4(),
@@ -758,6 +760,7 @@ export const categoriesMen = [
         categoryDesc:
             'Với thiết kế lịch lãm và không kém phần hiện đại từ các thương hiệu Pedro, Dsquared2, MLB, Puma, The Kooples... các bộ sưu tập sẽ giúp tôn lên sự nam tính và nét thanh lịch cho các quý ông, hoàn thiện vẻ ngoài một cách hoàn hảo.',
         img: 'https://file.hstatic.net/1000284478/file/nam-tui-vi_56696d1818ff46aeaef80ccd9f51c12b.png',
+        slug: 'tui-vi-nam',
     },
     {
         _id: uuidv4(),
@@ -765,5 +768,6 @@ export const categoriesMen = [
         categoryDesc:
             'Với kho tàng phụ kiện phong phú như thắt lưng, mắt kính, trang sức,... đến từ các thương hiệu đình đám Aojo, Mujosh, Pedro,... sẽ khiến các fashionista mê mẩn và yêu thích, giúp hoàn thiện vẻ ngoài một cách hoàn hảo.',
         img: 'https://file.hstatic.net/1000284478/file/nam-phu-kien_e26f9d5ac756478f8c660be777d3c3e7.png',
+        slug: 'phu-kien-nam',
     },
 ];

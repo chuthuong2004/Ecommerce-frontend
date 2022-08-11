@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './WishListItem.module.scss';
-import { CloseIcon } from './../Icons/Icons';
+import { CloseIcon } from './../Icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import config from './../../config/index';

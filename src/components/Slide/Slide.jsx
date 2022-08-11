@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SlickSlide.scss';
-import { NextArrowIcon, PrevArrowIcon } from '../Icons/Icons';
+import { NextArrowIcon, PrevArrowIcon } from '../Icons';
 const cx = classNames.bind(styles);
 const NextArrow = (props) => {
     const { className, style, onClick } = props;

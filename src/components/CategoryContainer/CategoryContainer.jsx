@@ -14,7 +14,10 @@ const CategoryContainer = ({ categories }) => {
                             <div className={cx('content')}>
                                 <h2 className={cx('category-name')}>{category.categoryName}</h2>
                                 <p className={cx('category-desc')}>{category.categoryDesc}</p>
-                                <Button to={config.routes.collections} className={cx('btn-discover')}>
+                                <Button
+                                    to={`${config.routes.collections}/${category.slug}`}
+                                    className={cx('btn-discover')}
+                                >
                                     Khám phá
                                 </Button>
                             </div>

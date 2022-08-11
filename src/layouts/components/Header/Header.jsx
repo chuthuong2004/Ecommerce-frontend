@@ -13,7 +13,7 @@ import {
     SearchIcon,
     UserActiveIcon,
     UserIcon,
-} from '../../../components/Icons/Icons';
+} from '../../../components/Icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import HeadlessTippy from '@tippyjs/react/headless';

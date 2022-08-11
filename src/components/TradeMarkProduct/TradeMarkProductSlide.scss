@@ -4,6 +4,12 @@
 }
 .slick-slider {
     position: relative !important;
+    .slick-list {
+        .slick-track {
+            gap: 20px;
+            display: flex;
+        }
+    }
 }
 .slick-prev,
 .slick-next {

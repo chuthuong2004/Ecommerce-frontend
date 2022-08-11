@@ -1,0 +1,115 @@
+.container {
+    .wrapper {
+        .collection-banner {
+            width: 100%;
+            height: 44rem;
+        }
+        .collection-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 30px;
+            margin: 40px 15px 25px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 0 80px;
+            letter-spacing: 1px;
+            line-height: 21px;
+            color: var(--primary);
+            display: flex;
+            .collection-sidebar {
+                flex-basis: 25%;
+                transition: all 0.5s ease-in-out;
+                padding: 120px 0 117px 5px;
+                &.hide-active {
+                    flex-basis: 0;
+                    width: 0;
+                    transform: translateX(-1000px);
+                }
+                .sort-by-filter {
+                    margin-bottom: 20px;
+                    .title-filter {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 16px;
+                        line-height: 30px;
+                        letter-spacing: 4px;
+                        font-weight: 700;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                    .sortList {
+                        display: flex;
+                        flex-direction: column;
+                        li {
+                            display: flex;
+                            align-items: center;
+                            text-align: left;
+                            input[type='radio'] {
+                                font-size: 14px;
+                                margin-right: 16px;
+                                cursor: pointer;
+                            }
+                            label {
+                                text-transform: capitalize;
+                                padding: 14px 14px 14px 0;
+                                margin: 2px 0;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .collection-right {
+                flex-basis: 75%;
+                padding-left: 6rem;
+                transition: all 0.5s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                .collection-outer-heading {
+                    padding: 15px 0;
+                    .collection-inner-heading {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .btn-filter-collection {
+                            display: flex;
+                            button {
+                                background-color: #f7f8f9;
+                                padding: 13px 20px;
+                                border-radius: 30px;
+                                display: flex !important;
+                                align-items: center !important;
+                                font-size: 14px;
+                                text-transform: none;
+                                font-weight: 500;
+                                min-width: 0;
+                                .hide-btn {
+                                    margin-left: -8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .collection-list {
+                    padding: 15px 0 60px;
+                    display: grid;
+                    gap: 40px 10px;
+                    transition: all 0.5s ease-in-out;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                &.hide-active {
+                    width: 100%;
+                    flex-basis: 100%;
+                    padding-left: 0;
+                }
+                &.hide-active > .collection-list {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+    }
+}

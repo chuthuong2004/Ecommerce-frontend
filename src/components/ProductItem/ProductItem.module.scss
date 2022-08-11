@@ -2,7 +2,7 @@
     background-color: white;
     height: 100%;
     width: 100%;
-    padding-right: 20px;
+    // padding-right: 20px;
     .wrapper {
         &:hover > .banner-product > .outer-product-color {
             height: calc(100% + 1.8rem);
@@ -24,8 +24,17 @@
                 &.is-cached {
                     opacity: 1;
                 }
-                &.lazyloaded {
-                    position: absolute;
+            }
+            .lazyloaded {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+                &.is-cached {
+                    opacity: 1;
                 }
             }
             .discount {
@@ -105,40 +114,44 @@
                 }
             }
         }
-        .trademark-name {
-            font-weight: 700;
-            line-height: 24px;
-            margin: 10px 0;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-        .product-name {
-            min-height: 48px;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            text-overflow: ellipsis;
-            cursor: pointer;
-            overflow: hidden;
-        }
-        .quantity-color {
-            margin-bottom: 20px;
-            display: block;
-        }
-        .product-price {
-            .price {
+        .product-loop-info {
+            padding: 5px 15px;
+            .trademark-name {
                 font-weight: 700;
                 line-height: 24px;
-                padding: 5px;
-                &.hasSale {
-                    background-color: #faff19;
+                margin: 10px 0;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+            .product-name {
+                min-height: 48px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                text-overflow: ellipsis;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            .quantity-color {
+                margin-bottom: 20px;
+                display: block;
+            }
+            .product-price {
+                .price {
+                    font-weight: 700;
+                    line-height: 24px;
+                    padding: 5px;
+                    &.hasSale {
+                        background-color: #faff19;
+                    }
+                }
+                del {
+                    line-height: 14px;
+                    margin-left: 12px;
                 }
             }
-            del {
-                line-height: 14px;
-                margin-left: 12px;
-            }
         }
+
         .td-underline {
             text-decoration: underline;
         }

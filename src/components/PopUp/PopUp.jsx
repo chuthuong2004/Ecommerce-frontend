@@ -3,7 +3,7 @@ import styles from './PopUp.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import WishListItem from './../WishListItem/WishListItem';
 import Button from './../Button/Button';
-import { CloseIcon, HeartFragileIcon } from '../Icons/Icons';
+import { CloseIcon, HeartFragileIcon } from '../Icons';
 const cx = classNames.bind(styles);
 const PopUp = ({ activeWishList, toggleModal, setActiveWishList }) => {
     const wishlists = [];
