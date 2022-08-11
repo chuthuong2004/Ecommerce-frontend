@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/';
 import Payment from './../pages/Payment/Payment';
 import Login from '../pages/Login/Login';
 import Collection from '../pages/Collection';
+
 // public routes
 const publicRoutes = [
     {
