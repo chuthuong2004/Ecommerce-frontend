@@ -2,41 +2,46 @@
     background-color: white;
     height: 100%;
     width: 100%;
-    // padding-right: 20px;
     .wrapper {
-        &:hover > .banner-product > .outer-product-color {
-            height: calc(100% + 1.8rem);
+        display: flex;
+        flex-direction: column;
+        &:hover > .product-img > .outer-product-color {
             opacity: 1;
+            transform: translateY(0);
+            z-index: 1;
         }
         .product-img {
             position: relative;
             height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             cursor: pointer;
-            .img {
+            .img-link {
+                display: flex;
+                transition: all 0.5s ease-in-out;
                 position: relative;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                bottom: 0;
-                transition: all 0.5s ease-in-out;
-                height: 100%;
-                opacity: 0;
-                &.is-cached {
-                    opacity: 1;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .lazyloaded {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: all 0.5s ease-in-out;
+                    &.is-cached {
+                        opacity: 1;
+                    }
                 }
             }
-            .lazyloaded {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                transition: all 0.5s ease-in-out;
-                &.is-cached {
-                    opacity: 1;
-                }
-            }
+
             .discount {
                 position: absolute;
                 top: 14px;
@@ -72,33 +77,33 @@
                     display: none;
                 }
             }
-        }
-        .banner-product {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            .banner-img {
+            .banner-product {
                 width: 100%;
                 height: 100%;
+                display: flex;
+                .banner-img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .outer-product-color {
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                width: 100%;
+                right: 0;
+                height: 77px;
                 background-color: rgba(255, 255, 255, 0.4);
-                height: 0;
+                transform: translateY(100%);
                 transition: all 0.3s ease-in-out;
                 display: flex;
                 padding: 8px;
                 gap: 8px;
-                opacity: 0;
                 .product-color-loop {
                     display: flex;
                     border: 1px solid transparent;
                     border-radius: 6px;
                     height: 100%;
-                    width: 58px;
+                    flex-basis: calc(16.66666666666667% - 8px);
                     overflow: hidden;
                     cursor: pointer;
                     .product-color-img {

@@ -39,17 +39,9 @@
     }
     &.btn-prev {
         left: 6rem;
-        opacity: 0;
     }
     &.btn-next {
         right: 6rem;
-        opacity: 1;
-    }
-    &.btn-prev.active {
-        opacity: 1;
-    }
-    &.btn-next.active {
-        opacity: 0;
     }
 }
 .slick-initialized .slick-slide {

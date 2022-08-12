@@ -25,10 +25,10 @@ const TradeMarkProduct = ({ trademarkProduct }) => {
         }
     };
     const NextArrow = (props) => {
-        const { className, style, onClick } = props;
+        const { style, onClick } = props;
         return (
             <div
-                className={cx('btn-arrow', 'btn-next', slideEnd && 'active')}
+                className={`btn-arrow btn-next btn-arrow-slide-item ${slideEnd && 'active'}`}
                 style={{
                     ...style,
                 }}
@@ -39,10 +39,10 @@ const TradeMarkProduct = ({ trademarkProduct }) => {
         );
     };
     const PrevArrow = (props) => {
-        const { className, style, onClick } = props;
+        const { style, onClick } = props;
         return (
             <div
-                className={cx('btn-arrow', 'btn-prev', className, slideStart && 'active')}
+                className={`btn-arrow btn-prev btn-arrow-slide-item ${slideStart && 'active'}`}
                 style={{
                     ...style,
                 }}
@@ -69,7 +69,7 @@ const TradeMarkProduct = ({ trademarkProduct }) => {
             <img src={trademarkProduct.imgTrademark} alt="" className={cx('trademark-img')} />
             <div className={cx('products-container')}>
                 <div className={cx('list-products')}>
-                    <Slider className={cx('slider')} {...settings}>
+                    <Slider className={cx('slider', 'slider-list')} {...settings}>
                         {trademarkProduct.products.map((product) => (
                             <ProductItem product={product} key={product?._id} />
                         ))}

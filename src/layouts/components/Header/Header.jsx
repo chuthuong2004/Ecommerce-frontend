@@ -31,8 +31,10 @@ function Header() {
     const [activeProfile, setActiveProfile] = useState(false);
     const [activeWishList, setActiveWishList] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
+    const [currentPageYOffset, setCurrentPageYOffset] = useState(0);
     window.onscroll = () => {
-        setIsScrolled(window.pageYOffset === 0 ? false : true);
+        setCurrentPageYOffset(window.pageYOffset);
+        setIsScrolled(window.pageYOffset > currentPageYOffset ? false : true);
         // setActiveWishList(false);
         return () => (window.onscroll = null);
     };
@@ -59,12 +61,14 @@ function Header() {
         setActiveWishList(!activeWishList);
     };
     return (
-        <>
-            <header
-                className={cx('wrapper', {
-                    sticky: isScrolled,
-                })}
-            >
+        <div className={cx('container', isScrolled ? 'sticky' : 'out-top')}>
+            {/* banner */}
+            <img
+                className={cx('img-banner')}
+                src="https://file.hstatic.net/1000284478/file/header_39a72a810505498cbc66e705fece7758.png"
+                alt=""
+            />
+            <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
                     <div className={cx('nav-left')}>
                         <Link to={config.routes.home} className={cx('logo')}>
@@ -232,7 +236,7 @@ function Header() {
                     </div>
                 </div>
             </header>
-        </>
+        </div>
     );
 }
 

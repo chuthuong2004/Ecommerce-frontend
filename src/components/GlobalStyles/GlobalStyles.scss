@@ -93,3 +93,16 @@ body {
         top: -8px;
     }
 }
+
+.d-flex {
+    display: flex;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.align-items-center {
+    align-items: center;
+}
+.fd-column {
+    flex-direction: column;
+}

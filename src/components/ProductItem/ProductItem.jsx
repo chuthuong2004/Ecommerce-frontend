@@ -22,11 +22,12 @@ const ProductItem = ({ product }) => {
             <div className={cx('wrapper')}>
                 <div className={cx('product-img')}>
                     <Link
+                        className={cx('img-link')}
                         onMouseOver={() => handleOnMouse('mouseover')}
                         onMouseOut={() => handleOnMouse('mouseout')}
                         to={config.routes.product}
                     >
-                        <img src={defaultImages.images[0]} alt="" className={cx('img', !isCached && 'is-cached')} />
+                        <img src={defaultImages.images[0]} alt="" />
                         <img
                             src={defaultImages.images[1]}
                             alt=""
@@ -38,13 +39,13 @@ const ProductItem = ({ product }) => {
                         <HeartIcon className={cx('heart')} stroke="#ffffff" />
                         <HeartActiveIcon className={cx('heart-active')} />
                     </div>
-                </div>
-                <div className={cx('banner-product')}>
-                    <img
-                        src="https://file.hstatic.net/1000284478/file/frame__22__c3a6e45e3424441da3746870f1e77536.png"
-                        alt=""
-                        className={cx('banner-img')}
-                    />
+                    <div className={cx('banner-product')}>
+                        <img
+                            src="https://file.hstatic.net/1000284478/file/frame__22__c3a6e45e3424441da3746870f1e77536.png"
+                            alt=""
+                            className={cx('banner-img')}
+                        />
+                    </div>
                     <div className={cx('outer-product-color')}>
                         {product.colors.map((color) => (
                             <div

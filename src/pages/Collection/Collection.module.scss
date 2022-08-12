@@ -1,3 +1,6 @@
+:root {
+    --line-height-title: 30px;
+}
 .container {
     .wrapper {
         .collection-banner {
@@ -8,7 +11,7 @@
             font-size: 2.4rem;
             font-weight: 700;
             letter-spacing: 1px;
-            line-height: 30px;
+            line-height: var(--line-height-title);
             margin: 40px 15px 25px;
             text-align: center;
             text-transform: uppercase;
@@ -19,31 +22,31 @@
             line-height: 21px;
             color: var(--primary);
             display: flex;
+            width: 100vw;
+            overflow: hidden;
             .collection-sidebar {
                 flex-basis: 25%;
-                transition: all 0.5s ease-in-out;
+                transition: all 0.4s linear;
                 padding: 120px 0 117px 5px;
-                &.hide-active {
+                width: 100%;
+                overflow: hidden;
+                &.active {
                     flex-basis: 0;
-                    width: 0;
-                    transform: translateX(-1000px);
+                    transform: translateX(-500px);
+                }
+                .title-filter {
+                    margin-bottom: 16px;
+                    line-height: var(--line-height-title);
+                    letter-spacing: 4px;
+                    font-weight: 700;
+                    font-size: 20px;
+                    text-transform: uppercase;
                 }
                 .sort-by-filter {
                     margin-bottom: 20px;
-                    .title-filter {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        margin-bottom: 16px;
-                        line-height: 30px;
-                        letter-spacing: 4px;
-                        font-weight: 700;
-                        font-size: 20px;
-                        text-transform: uppercase;
-                    }
-                    .sortList {
-                        display: flex;
-                        flex-direction: column;
+                    transition: height 0.4s linear;
+                    height: var(--line-height-title);
+                    .sort-list {
                         li {
                             display: flex;
                             align-items: center;
@@ -61,13 +64,47 @@
                             }
                         }
                     }
+                    &.open {
+                        height: 310px;
+                    }
+                }
+
+                .filter-collection-item-list {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 21px;
+                    .filter-collection-item {
+                        &:not(:last-child) {
+                            border-bottom: 1px solid #f7f8f9;
+                        }
+                        padding: 20px 0;
+                        margin-bottom: 2px;
+                        &.gender-filter {
+                            transition: height 0.4s linear;
+                            height: calc(21px + 40px);
+                            &.open {
+                                height: 110px;
+                                // height: 100%;
+                            }
+                        }
+                    }
+                }
+                .content-filter {
+                    height: 0;
+                    transition: height 0.4s linear;
+                    overflow: hidden;
+                    &.open {
+                        height: 100%;
+                    }
                 }
             }
             .collection-right {
                 flex-basis: 75%;
                 padding-left: 6rem;
-                transition: all 0.5s ease-in-out;
+                transition: all 0.4s linear;
                 display: flex;
+                width: 100%;
                 flex-direction: column;
                 .collection-outer-heading {
                     padding: 15px 0;
@@ -101,12 +138,12 @@
                     transition: all 0.5s ease-in-out;
                     grid-template-columns: repeat(3, 1fr);
                 }
-                &.hide-active {
+                &.active {
                     width: 100%;
                     flex-basis: 100%;
                     padding-left: 0;
                 }
-                &.hide-active > .collection-list {
+                &.active > .collection-list {
                     grid-template-columns: repeat(4, 1fr);
                 }
             }
