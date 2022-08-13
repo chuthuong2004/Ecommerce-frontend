@@ -20,21 +20,23 @@ import {
 } from '../../../components/Icons';
 import Button from '../../../components/Button';
 import PopUp from '../../../components/PopUp';
-import MenuSub from './MenuSub/';
+import MenuSub from './MenuSub';
 import Search from './Search';
 import { headerLinks } from '../../../assets/headerLinks';
 const cx = classNames.bind(styles);
 
 function Header() {
-    const user = null;
+    const user = {};
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeProfile, setActiveProfile] = useState(false);
     const [activeWishList, setActiveWishList] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
     const [currentPageYOffset, setCurrentPageYOffset] = useState(0);
+    const headerRef = useRef();
     window.onscroll = () => {
         setCurrentPageYOffset(window.pageYOffset);
-        setIsScrolled(window.pageYOffset > currentPageYOffset ? false : true);
+        setIsScrolled(window.pageYOffset >= currentPageYOffset || window.pageYOffset < 95 ? false : true);
+        window.pageYOffset <= 95 && headerRef.current.classList.remove(cx('out-top'));
         // setActiveWishList(false);
         return () => (window.onscroll = null);
     };
@@ -61,7 +63,7 @@ function Header() {
         setActiveWishList(!activeWishList);
     };
     return (
-        <div className={cx('container', isScrolled ? 'sticky' : 'out-top')}>
+        <div ref={headerRef} className={cx('container', isScrolled ? 'sticky' : 'out-top')}>
             {/* banner */}
             <img
                 className={cx('img-banner')}

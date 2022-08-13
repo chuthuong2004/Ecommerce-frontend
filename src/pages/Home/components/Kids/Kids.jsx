@@ -12,7 +12,7 @@ const Kids = () => {
     return (
         <div>
             <img
-                className={cx('img-intro-women')}
+                className={cx('img-intro-kid')}
                 src="https://file.hstatic.net/1000284478/file/main_10da49a4066343c5ab6d1e0e6fbba2ac.png"
                 alt=""
             />

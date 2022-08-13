@@ -91,7 +91,8 @@
                 left: 0;
                 bottom: 0;
                 right: 0;
-                height: 77px;
+                // min-height: 58px;
+                height: 15%;
                 background-color: rgba(255, 255, 255, 0.4);
                 transform: translateY(100%);
                 transition: all 0.3s ease-in-out;

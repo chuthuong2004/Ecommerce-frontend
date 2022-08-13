@@ -2,8 +2,7 @@
     width: 100vw;
     background-color: var(--white);
     z-index: 10;
-
-    transition: all 0.5s linear;
+    transition: all 0.2s linear;
     &.sticky {
         position: fixed;
         top: 0;
@@ -14,6 +13,7 @@
         animation: slideInTop 0.5s linear;
     }
     &.out-top {
+        transition: all 0.5s linear;
         position: fixed;
         top: 0;
         left: 0;
@@ -21,7 +21,6 @@
         margin: 0;
         transform: translateY(-100%);
     }
-
     @keyframes slideInTop {
         from {
             opacity: 0;
