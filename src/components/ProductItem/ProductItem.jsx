@@ -1,7 +1,7 @@
 import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
 import { HeartActiveIcon, HeartIcon } from './../Icons';
-import { useRef, useState } from 'react';
+import { useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 const cx = classNames.bind(styles);
@@ -17,6 +17,7 @@ const ProductItem = ({ product }) => {
         const prevImageDefault = product.colors.find((color) => color._id === idColorActive);
         action === 'mouseover' ? setDefaultImages(color) : setDefaultImages(prevImageDefault);
     };
+    console.log('re-render product item');
     return (
         <div className={cx('container')}>
             <div className={cx('wrapper')}>
@@ -83,4 +84,4 @@ const ProductItem = ({ product }) => {
         </div>
     );
 };
-export default ProductItem;
+export default memo(ProductItem);

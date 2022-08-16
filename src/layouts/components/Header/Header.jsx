@@ -27,19 +27,28 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const user = {};
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrollUp, setIsScrollUp] = useState(false);
+    const [isScrollDown, setIsScrollDown] = useState(false);
     const [activeProfile, setActiveProfile] = useState(false);
     const [activeWishList, setActiveWishList] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
     const [currentPageYOffset, setCurrentPageYOffset] = useState(0);
     const headerRef = useRef();
-    window.onscroll = () => {
-        setCurrentPageYOffset(window.pageYOffset);
-        setIsScrolled(window.pageYOffset >= currentPageYOffset || window.pageYOffset < 95 ? false : true);
-        window.pageYOffset <= 95 && headerRef.current.classList.remove(cx('out-top'));
-        // setActiveWishList(false);
-        return () => (window.onscroll = null);
-    };
+
+    useEffect(() => {
+        const onScroll = (e) => {
+            setCurrentPageYOffset(e.target.documentElement.scrollTop);
+            setIsScrollUp(
+                e.target.documentElement.scrollTop >= currentPageYOffset || e.target.documentElement.scrollTop < 97
+                    ? false
+                    : true,
+            );
+            setIsScrollDown(e.target.documentElement.scrollTop < currentPageYOffset ? false : true);
+            e.target.documentElement.scrollTop < 97 && headerRef.current.classList.remove(cx('out-top'));
+        };
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, [currentPageYOffset]);
     const location = useLocation();
     const handleScrollTop = () => {
         document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -59,11 +68,8 @@ function Header() {
             setActiveProfile(false);
         }
     };
-    const toggleModal = () => {
-        setActiveWishList(!activeWishList);
-    };
     return (
-        <div ref={headerRef} className={cx('container', isScrolled ? 'sticky' : 'out-top')}>
+        <div ref={headerRef} className={cx('container', isScrollUp && 'sticky', isScrollDown && 'out-top')}>
             {/* banner */}
             <img
                 className={cx('img-banner')}
@@ -205,11 +211,7 @@ function Header() {
                                     <HeartActiveIcon className={cx('icon-active')} />
                                 </div>
                             </Tippy>
-                            <PopUp
-                                activeWishList={activeWishList}
-                                setActiveWishList={setActiveWishList}
-                                toggleModal={toggleModal}
-                            />
+                            <PopUp activeWishList={activeWishList} handleClosePopUp={() => setActiveWishList(false)} />
                         </div>
                         <Link onClick={() => handleClickActive('cart')} to={config.routes.cart} className={cx('cart')}>
                             <Tippy

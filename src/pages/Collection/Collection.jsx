@@ -5,8 +5,10 @@ import { FilterIcon, MinusIcon, PlusIcon } from '../../components/Icons';
 import Button from './../../components/Button';
 import { products } from './dataCollections';
 import ProductItem from './../../components/ProductItem';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
+
+let scrollTop = 0;
 const Collection = () => {
     let { slugCollection } = useParams();
     const [activeFilter, setActiveFilter] = useState(false);
@@ -17,6 +19,15 @@ const Collection = () => {
     const [openColor, setOpenColor] = useState(false);
     const [openSize, setOpenSize] = useState(false);
     const [openMaterial, setOpenMaterial] = useState(false);
+    const [isScrollUp, setIsScrollUp] = useState(false);
+    useEffect(() => {
+        const onScroll = (e) => {
+            setIsScrollUp(e.target.documentElement.scrollTop < scrollTop);
+            scrollTop = e.target.documentElement.scrollTop;
+        };
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
     return (
         <div className={cx('container')}>
             <div className={cx('wrapper')}>
@@ -25,7 +36,37 @@ const Collection = () => {
                     alt=""
                     className={cx('collection-banner')}
                 />
-                <h1 className={cx('collection-title')}>New Arrival</h1>
+                <h1 className={cx('collection-title')}>{slugCollection}</h1>
+                <div className={cx('collection-desc')}>
+                    <strong>Goodbye Summer</strong>
+                    <div>15.08 - 18.08</div>
+                    <div>&nbsp;</div>
+                    <div>Mai sơn Online tặng bạn</div>
+                    <div>&nbsp;</div>
+
+                    <div>
+                        <strong style={{ fontSize: 18, textTransform: 'uppercase' }}>
+                            01 Kem mắt AHC trị giá 840k
+                        </strong>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>Khi mua hóa đơn bất kỳ từ 2.690K</div>
+                    <div>&nbsp;</div>
+                    <div className={cx('note')}>
+                        <div>
+                            <span>Lưu ý:</span>
+                        </div>
+                        <div>
+                            <span>Số lượng quà tặng có hạn</span>
+                        </div>
+                        <div>
+                            <span>Quà tặng sẽ được chuyển tới quý khách sau khi đơn hàng hoàn tất</span>
+                        </div>
+                        <div>
+                            <span>Ưu đãi không áp dụng đồng thời với chương trình khác tại Maison Online</span>
+                        </div>
+                    </div>
+                </div>
                 <div className={cx('content')}>
                     <div className={cx('collection-sidebar', activeFilter && 'active')}>
                         <div className={cx('sort-by-filter', openSort && 'open')}>
@@ -120,7 +161,7 @@ const Collection = () => {
                         </div>
                     </div>
                     <div className={cx('collection-right', activeFilter && 'active')}>
-                        <div className={cx('collection-outer-heading')}>
+                        <div className={cx('collection-outer-heading', isScrollUp && 'active')}>
                             <div className={cx('collection-inner-heading')}>
                                 <div className={cx('filter-count-total')}>{products.length} sản phẩm</div>
                                 <div className={cx('btn-filter-collection')}>

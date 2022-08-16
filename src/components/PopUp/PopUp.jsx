@@ -5,7 +5,7 @@ import WishListItem from './../WishListItem/WishListItem';
 import Button from './../Button/Button';
 import { CloseIcon, HeartFragileIcon } from '../Icons';
 const cx = classNames.bind(styles);
-const PopUp = ({ activeWishList, toggleModal, setActiveWishList }) => {
+const PopUp = ({ activeWishList, handleClosePopUp }) => {
     const wishlists = [];
     const modalRef = useRef();
     useEffect(() => {
@@ -22,9 +22,9 @@ const PopUp = ({ activeWishList, toggleModal, setActiveWishList }) => {
     }, [activeWishList]);
     return (
         <div ref={modalRef} className={cx('modal', activeWishList ? 'active' : 'no-active')}>
-            <div onClick={toggleModal} className={cx('overlay')}></div>
+            <div onClick={handleClosePopUp} className={cx('overlay')}></div>
             <div className={cx('modal-content', !activeWishList && 'no-active')}>
-                <div onClick={toggleModal} className={cx('close')}>
+                <div onClick={handleClosePopUp} className={cx('close')}>
                     <CloseIcon />
                 </div>
                 {wishlists ? (
