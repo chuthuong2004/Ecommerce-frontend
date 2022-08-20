@@ -25,13 +25,12 @@ const Input = ({
         setDisplayed(false);
     }, [!props.value]);
     return (
-        <>
+        <div>
             {type === 'checkbox' || type === 'radio' ? (
                 <div className={cx('checkbox')}>
                     <input type={type} name="" id={idInput} />
                     <label htmlFor={idInput}>
                         <span></span>
-
                         {label}
                     </label>
                 </div>
@@ -66,7 +65,7 @@ const Input = ({
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

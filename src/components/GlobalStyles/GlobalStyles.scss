@@ -109,3 +109,13 @@ body {
 .d-none {
     display: none !important;
 }
+.container-fluid {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 21px;
+    padding: 0 80px;
+    width: 100vw;
+}
+svg {
+    vertical-align: bottom;
+}

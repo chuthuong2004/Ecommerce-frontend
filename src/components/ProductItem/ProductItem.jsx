@@ -26,7 +26,7 @@ const ProductItem = ({ product }) => {
                         className={cx('img-link')}
                         onMouseOver={() => handleOnMouse('mouseover')}
                         onMouseOut={() => handleOnMouse('mouseout')}
-                        to={config.routes.product}
+                        to={config.routes.product + '/' + product._id}
                     >
                         <img src={defaultImages.images[0]} alt="" />
                         <img

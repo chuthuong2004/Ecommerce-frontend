@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './PopUp.module.scss';
 import { useEffect, useRef, useState } from 'react';
-import WishListItem from './../WishListItem/WishListItem';
-import Button from './../Button/Button';
+import ItemCart from '../ItemCart';
+import Button from './../Button';
 import { CloseIcon, HeartFragileIcon } from '../Icons';
 const cx = classNames.bind(styles);
 const PopUp = ({ activeWishList, handleClosePopUp }) => {
@@ -31,10 +31,10 @@ const PopUp = ({ activeWishList, handleClosePopUp }) => {
                     <>
                         <h3 className={cx('title')}>Yêu thích</h3>
                         <div className={cx('content')}>
-                            <WishListItem hasSale itemInCart />
-                            <WishListItem itemInCart />
-                            <WishListItem hasSale />
-                            <WishListItem />
+                            <ItemCart hasSale itemInCart />
+                            <ItemCart itemInCart />
+                            <ItemCart hasSale />
+                            <ItemCart />
                         </div>
                         <div className={cx('wishlist-actions')}>
                             <Button primary children="Chuyển tất cả vào giỏ hàng" />

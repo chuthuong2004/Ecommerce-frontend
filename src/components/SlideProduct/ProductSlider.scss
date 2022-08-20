@@ -1,12 +1,13 @@
 .slider-list {
     .slick-list {
         .slick-track {
-            gap: 20px;
             display: flex;
+            .slick-slide {
+                margin-right: 20px;
+            }
         }
     }
 }
-
 .btn-arrow-slide-item.btn-arrow {
     top: 40%;
     transform: translateY(-100%);

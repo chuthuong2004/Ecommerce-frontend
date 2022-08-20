@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/';
 import Payment from './../pages/Payment/Payment';
 import Login from '../pages/Login/Login';
 import Collection from '../pages/Collection';
+import { HeaderOnly } from '../layouts';
 
 // public routes
 const publicRoutes = [
@@ -17,7 +18,7 @@ const publicRoutes = [
         component: Home,
     },
     {
-        path: config.routes.product,
+        path: `${config.routes.product}/:slug`,
         component: Product,
     },
     {
@@ -27,10 +28,12 @@ const publicRoutes = [
     {
         path: config.routes.cart,
         component: Cart,
+        layout: HeaderOnly,
     },
     {
         path: config.routes.payment,
         component: Payment,
+        layout: null,
     },
     {
         path: config.routes.login,

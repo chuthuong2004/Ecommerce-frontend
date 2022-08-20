@@ -1,6 +1,17 @@
 .container {
     margin-bottom: 20px;
     display: flex;
+    input[type='checkbox'] {
+        margin-right: 15px;
+        &:checked {
+            border: none;
+            outline: 2px solid var(--primary);
+        }
+    }
+    input:checked {
+        outline: 2px solid var(--primary);
+        border: none;
+    }
     .image-wrapper {
         img {
             width: 100px;
@@ -10,7 +21,8 @@
     .text-wrapper {
         display: flex;
         flex-direction: column;
-        padding: 0 10px;
+        padding-left: 15px;
+        padding-right: 5px;
         .top {
             display: flex;
             align-items: center;
@@ -36,6 +48,10 @@
             -webkit-line-clamp: 2;
             text-overflow: ellipsis;
             overflow: hidden;
+            &.item-cart {
+                -webkit-line-clamp: 1;
+                font-size: 12px;
+            }
         }
         .product-price {
             display: flex;
@@ -92,6 +108,34 @@
         .product-actions {
             font-size: 12px;
             margin-top: 10px;
+        }
+        .product-quantity {
+            margin-top: 5px;
+            display: flex;
+            .input-number {
+                display: flex;
+                align-items: center;
+                border: 1px solid #868d95;
+                border-radius: 2px;
+                min-width: 42px;
+                height: 40px;
+                .btn-quantity {
+                    width: 40px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    background-color: #fff;
+                }
+                .input-quantity {
+                    width: 25px;
+                    max-height: 40px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    text-align: center;
+                }
+            }
         }
     }
 }

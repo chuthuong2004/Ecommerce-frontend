@@ -2,12 +2,13 @@ import config from '../config';
 import { v4 as uuidv4 } from 'uuid';
 export const headerLinks = [
     {
-        to: config.routes.newIn,
+        to: config.routes.newArrival,
         title: 'New In',
         subLinks: [
             {
                 title: 'New in',
                 _id: uuidv4(),
+                to: config.routes.newArrival,
                 links: [
                     {
                         content: 'GOODBYE SUMMER',
@@ -122,11 +123,11 @@ export const headerLinks = [
     {
         to: config.routes.women,
         title: 'Nữ',
-
         subLinks: [
             {
                 title: 'Trang phục',
                 _id: uuidv4(),
+                to: `${config.routes.collections}/trang-phuc-nu`,
                 links: [
                     {
                         content: 'Áo',
@@ -654,7 +655,7 @@ export const headerLinks = [
         ],
     },
     {
-        to: config.routes.trademark,
+        to: config.routes.newArrival,
         title: 'Thương Hiệu',
         subLinks: [
             {

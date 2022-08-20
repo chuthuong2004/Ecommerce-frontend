@@ -1,0 +1,157 @@
+.wrapper {
+    .checkout-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: var(--default-layout-header-height);
+        .checkout-logo {
+            position: absolute;
+            top: 11px;
+            left: 0;
+            width: 83px;
+            height: 34px;
+            cursor: pointer;
+        }
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            &-item:not(:last-child) {
+                padding-right: 24px;
+            }
+            &-item {
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-left: 15px;
+                }
+                &-current {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        min-width: var(--default-layout-width);
+        display: flex;
+        .title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .main {
+            flex: 2.5;
+            height: 100vh;
+            padding: 56px 160px 0 0;
+            display: flex;
+            flex-direction: column;
+            &-content {
+                .logged-in-customer-information {
+                    display: flex;
+                    margin: 24px 0;
+                    align-items: center;
+                    gap: 14px;
+                    &-avatar {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background-color: #f7f8f9;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        span {
+                            font-size: 34px;
+                            font-weight: bold;
+                        }
+                        img {
+                            border-radius: 50%;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    &-paragraph {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 4px 0 0;
+                        flex: 1;
+                        align-items: flex-end;
+                        .infor-account {
+                            .name {
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+                            .email {
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                        }
+                        .logout {
+                            color: #3870f6;
+                            font-size: 14px;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                .fieldset {
+                }
+            }
+            .type-address-shipping {
+                display: flex;
+                margin-bottom: 30px;
+                padding: 20px 0;
+                gap: 50px;
+                border-bottom: 1px dashed gray;
+                order: 2;
+                width: 100%;
+            }
+            .field-required {
+                display: flex;
+                gap: 30px;
+            }
+            .field-input {
+                flex: 1;
+                input[type='radio'] {
+                    margin-right: 10px;
+                }
+            }
+        }
+        .sidebar {
+            height: 100vh;
+            flex: 1.5;
+            background-color: blue;
+        }
+    }
+    .checkout-step {
+        background-color: #f0f0f0;
+        color: var(--primary);
+        display: flex;
+        justify-content: center;
+        letter-spacing: 1px;
+        padding: 40px 0;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .step-footer {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            .btn {
+                padding-right: 40px;
+                padding-left: 40px;
+            }
+            .btn-prev-link {
+                font-weight: 400;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
