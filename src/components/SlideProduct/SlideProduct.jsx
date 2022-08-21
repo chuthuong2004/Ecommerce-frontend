@@ -12,17 +12,12 @@ import ProductItem from './../ProductItem/ProductItem';
 import Button from './../Button/Button';
 import config from '../../config';
 const cx = classNames.bind(styles);
-const SlideProduct = ({ products, showBtn = true, title }) => {
+const SlideProduct = ({ products, showBtn = true, title, slideShow = 4.5, slideScroll = 4 }) => {
     const [slideStart, setSlideStart] = useState(false);
     const [slideEnd, setSlideEnd] = useState(false);
-    const [openButtonAll, setOpenButtonAll] = useState(false);
     const handleChange = (currentSlide, nextSlide) => {
         setSlideStart(nextSlide >= settings.slidesToScroll);
         setSlideEnd(nextSlide >= settings.slidesToScroll + settings.slidesToShow);
-        console.log({ currentSlide, nextSlide });
-        if (nextSlide === 7.5) {
-            setOpenButtonAll(true);
-        }
     };
     const NextArrow = (props) => {
         const { style, onClick } = props;
@@ -56,8 +51,8 @@ const SlideProduct = ({ products, showBtn = true, title }) => {
         dots: false,
         infinite: false,
         speed: 1000,
-        slidesToShow: 4.5,
-        slidesToScroll: 4,
+        slidesToShow: slideShow,
+        slidesToScroll: slideScroll,
         draggable: true,
         focusOnSelect: false,
         nextArrow: <NextArrow />,

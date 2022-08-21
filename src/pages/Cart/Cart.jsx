@@ -1,18 +1,17 @@
-import { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Cart.module.scss';
 import Button from '../../components/Button';
-import { BagIcon, BagIconLarge, PointerIcon } from '../../components/Icons';
+import { BagIconLarge, PointerIcon } from '../../components/Icons';
 import Input from '../../components/Input';
 import ItemCart from '../../components/ItemCart';
 import SocialFooter from './../../layouts/components/SocialFooter';
 import Footer from '../../layouts/components/Footer';
 import config from '../../config';
-import SlideProduct from './../../components/SlideProduct/SlideProduct';
-import { trademarkProducts } from './../Home/components/Kids/dataKids';
+import EmptyContent from '../../components/EmptyContent';
+import RecommendedProduct from '../../components/RecommendedProduct/RecommendedProduct';
 const cx = classNames.bind(styles);
 const Cart = () => {
-    const cart = {};
+    const cart = null;
 
     return (
         <div className={cx('wrapper')}>
@@ -117,35 +116,13 @@ const Cart = () => {
                 </>
             ) : (
                 <>
-                    <div className={cx('empty-products')}>
-                        <div className={cx('empty-products__image')}>
-                            <BagIconLarge />
-                        </div>
-                        <div className={cx('empty-products__shop-now')}>
-                            <div className={cx('content')}>
-                                <p className={cx('content-1')}>Không có sản phẩm nào!</p>
-                                <p className={cx('content-2')}>
-                                    Hãy mua sắm ngay lúc này để tận hưởng các ưu đãi hấp dấn chỉ dành riêng cho bạn.
-                                </p>
-                            </div>
-                            <div className={cx('btn--view-all')}>
-                                <Button
-                                    to={config.routes.collections + '/new-arrival'}
-                                    className={cx('btn')}
-                                    large
-                                    primary
-                                >
-                                    Dạo một vòng xem nào
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={cx('cart-product-recommended')}>
-                        <div className={cx('line')}></div>
-                        <div className={cx('container-fluid')}>
-                            <SlideProduct title="Gợi ý cho bạn" products={trademarkProducts[0].products} />
-                        </div>
-                    </div>
+                    <EmptyContent
+                        icon={<BagIconLarge />}
+                        titleBtn="Dạo một vòng xem nào"
+                        content1="Không có sản phẩm nào!"
+                        content2=" Hãy mua sắm ngay lúc này để tận hưởng các ưu đãi hấp dấn chỉ dành riêng cho bạn."
+                    />
+                    <RecommendedProduct />
                     <Footer />
                 </>
             )}

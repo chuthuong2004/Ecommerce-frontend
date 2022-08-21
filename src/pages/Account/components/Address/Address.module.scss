@@ -1,0 +1,51 @@
+.account-address {
+    .add-address {
+        margin-bottom: 64px;
+        .btn-add-address {
+            width: 20%;
+        }
+    }
+    .addresses {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .address {
+            background-color: #f7f8f9;
+            border-radius: 2px;
+            color: var(--primary);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+            &-name {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: 700;
+                .name {
+                    display: flex;
+                    gap: 10px;
+                    .edit-icon {
+                        cursor: pointer;
+                    }
+                }
+                .btn-default {
+                    display: none;
+                    .btn {
+                        font-size: 10px;
+                        font-weight: 500;
+                        padding: 5px 10px;
+                    }
+                }
+                &.default-address .btn-default {
+                    display: block;
+                }
+            }
+            .phone {
+            }
+            .delivery-address {
+            }
+        }
+    }
+}

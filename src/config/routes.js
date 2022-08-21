@@ -15,8 +15,12 @@ const routes = {
     payment: '/thanh-toan',
     account: '/tai-khoan',
     order: '/tai-khoan/don-hang',
-    changePassword: '/tai-khoan/doi-mat-khau',
     address: '/tai-khoan/dia-chi',
-    policy: '/pages/chinh-sach-bao-mat',
+    receiveNotify: '/tai-khoan/thong-bao',
+    logout: '/logout',
+    partner: '/tai-khoan/doi-tac',
+    recentlyViewed: '/tai-khoan/da-xem-gan-day',
+    changePassword: '/tai-khoan/doi-mat-khau',
+    help: '/pages/chinh-sach-bao-mat',
 };
 export default routes;

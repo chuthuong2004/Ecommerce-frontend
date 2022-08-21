@@ -1,0 +1,25 @@
+.wrapper {
+    color: var(--primary);
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    .container {
+        padding: 0 12px;
+        width: var(--default-layout-width);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        & > h1 {
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        & > strong {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}

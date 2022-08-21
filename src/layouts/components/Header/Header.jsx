@@ -23,6 +23,7 @@ import PopUp from '../../../components/PopUp';
 import MenuSub from './MenuSub';
 import Search from './Search';
 import { headerLinks } from '../../../assets/headerLinks';
+import { sidebars } from './../../../assets/sidebars';
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -119,35 +120,17 @@ function Header() {
                                 delay={[0, 50]}
                                 interactive={true}
                                 visible={activeProfile}
+                                onClickOutside={() => setActiveProfile(false)}
                                 placement="bottom"
                                 render={(attrs) => {
                                     return user ? (
                                         <PopperWrapper className="popper-user">
                                             <ul className={cx('popper-user')} tabIndex="-1" {...attrs}>
-                                                <li>
-                                                    <Link to={config.routes.account}>Thông tin tài khoản</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={config.routes.order}>Đơn hàng</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={config.routes.address}>Địa chỉ</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={'/da-xem-gan-day'}>Đã xem gần đây</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={'#signup-notify'}>Đằng ký nhận thông báo</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={config.routes.policy}>Trợ giúp</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={'/tro-thanh-doi-tac'}>Trở thành đối tác B2B</Link>
-                                                </li>
-                                                <li>
-                                                    <Link to={'/log-out'}>Đăng xuất</Link>
-                                                </li>
+                                                {sidebars.map((sidebar, index) => (
+                                                    <li onClick={() => setActiveProfile(false)} key={index}>
+                                                        <Link to={sidebar.to}>{sidebar.title}</Link>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </PopperWrapper>
                                     ) : (

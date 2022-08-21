@@ -969,14 +969,16 @@ export const PointerIcon = ({ width = '2.4rem', height = '2.4rem', className }) 
     </svg>
 );
 
-export const PlusStrongIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M18.75 12H5.25M12 5.25V18.75V5.25Z"
-            stroke="#2E2E2E"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        ></path>
+export const PlusStrongIcon = ({ width = '2.4rem', height = '2.4rem', className, color = '#2e2e2e' }) => (
+    <svg
+        width={width}
+        height={height}
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M18.75 12H5.25M12 5.25V18.75V5.25Z" stroke={color} strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );
 export const ArrowRightIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
@@ -995,7 +997,14 @@ export const ArrowLeftIcon = ({ width = '2.4rem', height = '2.4rem', className }
     </svg>
 );
 export const TruckIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+        width={width}
+        height={height}
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             d="M22.5 11.25H16.5V7.5H20.4922C20.6421 7.5 20.7886 7.54491 20.9127 7.62895C21.0368 7.71298 21.1329 7.83228 21.1886 7.97146L22.5 11.25Z"
             stroke="#2E2E2E"
@@ -1030,17 +1039,158 @@ export const TruckIcon = ({ width = '2.4rem', height = '2.4rem', className }) =>
         ></path>
     </svg>
 );
-export const LocationIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+export const TruckActiveIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-            d="M12 12.75C13.6569 12.75 15 11.4069 15 9.75C15 8.09315 13.6569 6.75 12 6.75C10.3431 6.75 9 8.09315 9 9.75C9 11.4069 10.3431 12.75 12 12.75Z"
+            d="M22.5 11.25H16.5V7.5H20.4922C20.6421 7.5 20.7886 7.54491 20.9127 7.62895C21.0368 7.71298 21.1329 7.83228 21.1886 7.97146L22.5 11.25Z"
+            stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path d="M1.5 13.5H16.5" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round"></path>
+        <path d="M15.375 18H8.625" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round"></path>
+        <path
+            d="M4.125 18H2.25C2.05109 18 1.86032 17.921 1.71967 17.7803C1.57902 17.6397 1.5 17.4489 1.5 17.25V6.75C1.5 6.55109 1.57902 6.36032 1.71967 6.21967C1.86032 6.07902 2.05109 6 2.25 6H16.5V16.0514"
             stroke="#2E2E2E"
             strokeLinecap="round"
             strokeLinejoin="round"
         ></path>
         <path
-            d="M19.5 9.75C19.5 16.5 12 21.75 12 21.75C12 21.75 4.5 16.5 4.5 9.75C4.5 7.76088 5.29018 5.85322 6.6967 4.4467C8.10322 3.04018 10.0109 2.25 12 2.25C13.9891 2.25 15.8968 3.04018 17.3033 4.4467C18.7098 5.85322 19.5 7.76088 19.5 9.75V9.75Z"
+            d="M16.5 16.0514V11.25H22.5V17.25C22.5 17.4489 22.421 17.6397 22.2803 17.7803C22.1397 17.921 21.9489 18 21.75 18H19.875"
+            fill="#2E2E2E"
+        ></path>
+        <path
+            d="M16.5 16.0514V11.25H22.5V17.25C22.5 17.4489 22.421 17.6397 22.2803 17.7803C22.1397 17.921 21.9489 18 21.75 18H19.875"
             stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path d="M16 13H2V18H16V13Z" fill="#2E2E2E"></path>
+        <path
+            d="M6.375 20.25C7.61764 20.25 8.625 19.2426 8.625 18C8.625 16.7574 7.61764 15.75 6.375 15.75C5.13236 15.75 4.125 16.7574 4.125 18C4.125 19.2426 5.13236 20.25 6.375 20.25Z"
+            fill="white"
+            stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M17.625 20.25C18.8676 20.25 19.875 19.2426 19.875 18C19.875 16.7574 18.8676 15.75 17.625 15.75C16.3824 15.75 15.375 16.7574 15.375 18C15.375 19.2426 16.3824 20.25 17.625 20.25Z"
+            fill="white"
+            stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+    </svg>
+);
+export const TruckEmptyIcon = () => (
+    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M75 37.5H55V25H68.3074C68.8071 25 69.2952 25.1497 69.709 25.4298C70.1227 25.7099 70.443 26.1076 70.6286 26.5715L75 37.5Z"
+            fill="#F7F8F9"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path d="M5 45H55" stroke="#868D95" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+        <path d="M51.25 60H28.75" stroke="#868D95" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+        <path d="M55 59V53L13 59H55Z" fill="#F7F8F9"></path>
+        <path
+            d="M13.75 60H7.5C6.83696 60 6.20107 59.7366 5.73223 59.2678C5.26339 58.7989 5 58.163 5 57.5V22.5C5 21.837 5.26339 21.2011 5.73223 20.7322C6.20107 20.2634 6.83696 20 7.5 20H55V53.5047"
+            fill="#F7F8F9"
+        ></path>
+        <path
+            d="M13.75 60H7.5C6.83696 60 6.20107 59.7366 5.73223 59.2678C5.26339 58.7989 5 58.163 5 57.5V22.5C5 21.837 5.26339 21.2011 5.73223 20.7322C6.20107 20.2634 6.83696 20 7.5 20H55V53.5047"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M55 53.5047V37.5H75V57.5C75 58.163 74.7366 58.7989 74.2678 59.2678C73.7989 59.7366 73.163 60 72.5 60H66.25"
+            fill="#F7F8F9"
+        ></path>
+        <path
+            d="M55 53.5047V37.5H75V57.5C75 58.163 74.7366 58.7989 74.2678 59.2678C73.7989 59.7366 73.163 60 72.5 60H66.25"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M58.75 67.5C62.8921 67.5 66.25 64.1421 66.25 60C66.25 55.8579 62.8921 52.5 58.75 52.5C54.6079 52.5 51.25 55.8579 51.25 60C51.25 64.1421 54.6079 67.5 58.75 67.5Z"
+            fill="#F7F8F9"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M21.25 67.5C25.3921 67.5 28.75 64.1421 28.75 60C28.75 55.8579 25.3921 52.5 21.25 52.5C17.1079 52.5 13.75 55.8579 13.75 60C13.75 64.1421 17.1079 67.5 21.25 67.5Z"
+            fill="#F7F8F9"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+    </svg>
+);
+export const LocationIcon = ({ width = '2.4rem', height = '2.4rem', className, color = '#2E2E2E' }) => (
+    <svg
+        width={width}
+        height={height}
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M12 12.75C13.6569 12.75 15 11.4069 15 9.75C15 8.09315 13.6569 6.75 12 6.75C10.3431 6.75 9 8.09315 9 9.75C9 11.4069 10.3431 12.75 12 12.75Z"
+            stroke={color}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M19.5 9.75C19.5 16.5 12 21.75 12 21.75C12 21.75 4.5 16.5 4.5 9.75C4.5 7.76088 5.29018 5.85322 6.6967 4.4467C8.10322 3.04018 10.0109 2.25 12 2.25C13.9891 2.25 15.8968 3.04018 17.3033 4.4467C18.7098 5.85322 19.5 7.76088 19.5 9.75V9.75Z"
+            stroke={color}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+    </svg>
+);
+export const LocationActiveIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M19.5 9.75C19.5 16.5 12 21.75 12 21.75C12 21.75 4.5 16.5 4.5 9.75C4.5 7.76088 5.29018 5.85322 6.6967 4.4467C8.10322 3.04018 10.0109 2.25 12 2.25C13.9891 2.25 15.8968 3.04018 17.3033 4.4467C18.7098 5.85322 19.5 7.76088 19.5 9.75Z"
+            fill="#2E2E2E"
+            stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M12 12.75C13.6569 12.75 15 11.4069 15 9.75C15 8.09315 13.6569 6.75 12 6.75C10.3431 6.75 9 8.09315 9 9.75C9 11.4069 10.3431 12.75 12 12.75Z"
+            fill="white"
+            stroke="white"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+    </svg>
+);
+export const LocationEmptyIcon = () => (
+    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M65 32.5C65 55 40 72.5 40 72.5C40 72.5 15 55 15 32.5C15 25.8696 17.6339 19.5107 22.3223 14.8223C27.0107 10.1339 33.3696 7.5 40 7.5C46.6304 7.5 52.9893 10.1339 57.6777 14.8223C62.3661 19.5107 65 25.8696 65 32.5Z"
+            fill="#F7F8F9"
+            stroke="#868D95"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path
+            d="M40 42.5C45.5228 42.5 50 38.0228 50 32.5C50 26.9772 45.5228 22.5 40 22.5C34.4772 22.5 30 26.9772 30 32.5C30 38.0228 34.4772 42.5 40 42.5Z"
+            fill="#F7F8F9"
+            stroke="#868D95"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
         ></path>
@@ -1128,5 +1278,16 @@ export const LogoutIcon = ({ width = '2.4rem', height = '2.4rem', className }) =
             strokeLinecap="round"
             strokeLinejoin="round"
         ></path>
+    </svg>
+);
+export const EditIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M7.5 16.8739H3.75C3.58424 16.8739 3.42527 16.8081 3.30806 16.6909C3.19085 16.5737 3.125 16.4147 3.125 16.2489V12.7578C3.125 12.6757 3.14117 12.5945 3.17258 12.5186C3.20398 12.4428 3.25002 12.3739 3.30806 12.3159L12.6831 2.94087C12.8003 2.82366 12.9592 2.75781 13.125 2.75781C13.2908 2.75781 13.4497 2.82366 13.5669 2.94087L17.0581 6.43199C17.1753 6.5492 17.2411 6.70817 17.2411 6.87393C17.2411 7.03969 17.1753 7.19866 17.0581 7.31587L7.5 16.8739Z"
+            stroke="#2E2E2E"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        ></path>
+        <path d="M10.625 5L15 9.375" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );

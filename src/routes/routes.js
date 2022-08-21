@@ -10,6 +10,7 @@ import Payment from './../pages/Payment/Payment';
 import Login from '../pages/Login/Login';
 import Collection from '../pages/Collection';
 import { HeaderOnly } from '../layouts';
+import Policy from '../pages/Policy';
 
 // public routes
 const publicRoutes = [
@@ -23,6 +24,31 @@ const publicRoutes = [
     },
     {
         path: config.routes.account,
+        component: Account,
+    },
+    {
+        path: config.routes.order,
+        component: Account,
+    },
+    {
+        path: config.routes.address,
+        component: Account,
+    },
+    {
+        path: config.routes.recentlyViewed,
+        component: Account,
+    },
+    {
+        path: config.routes.receiveNotify,
+        component: Account,
+    },
+    {
+        path: config.routes.help,
+        component: Policy,
+        layout: HeaderOnly,
+    },
+    {
+        path: config.routes.partner,
         component: Account,
     },
     {

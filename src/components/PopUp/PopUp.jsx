@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import ItemCart from '../ItemCart';
 import Button from './../Button';
 import { CloseIcon, HeartFragileIcon } from '../Icons';
+import RecommendedProduct from '../RecommendedProduct';
+import EmptyContent from '../EmptyContent';
 const cx = classNames.bind(styles);
 const PopUp = ({ activeWishList, handleClosePopUp }) => {
     const wishlists = [];
@@ -23,12 +25,18 @@ const PopUp = ({ activeWishList, handleClosePopUp }) => {
     return (
         <div ref={modalRef} className={cx('modal', activeWishList ? 'active' : 'no-active')}>
             <div onClick={handleClosePopUp} className={cx('overlay')}></div>
-            <div className={cx('modal-content', !activeWishList && 'no-active')}>
-                <div onClick={handleClosePopUp} className={cx('close')}>
-                    <CloseIcon />
-                </div>
-                {wishlists ? (
+            <div
+                className={cx(
+                    'modal-content',
+                    !activeWishList && 'no-active',
+                    wishlists && wishlists.length > 0 && 'empty',
+                )}
+            >
+                {wishlists && wishlists.length > 0 ? (
                     <>
+                        <div onClick={handleClosePopUp} className={cx('close')}>
+                            <CloseIcon />
+                        </div>
                         <h3 className={cx('title')}>Yêu thích</h3>
                         <div className={cx('content')}>
                             <ItemCart hasSale itemInCart />
@@ -42,15 +50,13 @@ const PopUp = ({ activeWishList, handleClosePopUp }) => {
                     </>
                 ) : (
                     <div>
-                        <div className={cx('empty-wl-first')}>
-                            <div className={cx('empty-wl-img')}>
-                                <HeartFragileIcon width="10rem" height="10rem" />
-                            </div>
-                            <div className={cx('empty-wl-text')}>Không có sản phẩm nào !</div>
-                            <div className={cx('empty-wl-action')}>
-                                <Button large primary children="Dạo một vòng xem nào" />
-                            </div>
-                        </div>
+                        <EmptyContent
+                            titleBtn="Dạo một vòng xem nào"
+                            content1="Không có sản phẩm nào !"
+                            icon={<HeartFragileIcon width="10rem" height="10rem" />}
+                            noPadding
+                        />
+                        <RecommendedProduct slideShow={2} slideScroll={2} small line={false} />
                     </div>
                 )}
             </div>
