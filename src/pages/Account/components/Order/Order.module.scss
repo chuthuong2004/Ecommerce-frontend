@@ -1,0 +1,79 @@
+.orders-search {
+    position: relative;
+    display: flex;
+    & > div {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .search-input {
+        width: 50%;
+        background-color: #ffffff;
+        border: 1px solid #d8d8d8;
+        border-radius: 30px;
+        font-size: 14px;
+        padding: 10px 20px 10px 45px;
+    }
+}
+.list-orders {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+    .order {
+        cursor: pointer;
+        &:not(:last-child) {
+            border-bottom: 4px solid #f7f8f9;
+        }
+        &__meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__code {
+        }
+        &__status {
+            color: #868d95;
+            font-weight: 600;
+            font-size: 14px;
+            font-style: italic;
+            display: flex;
+            gap: 5px;
+        }
+        &__product {
+            .product {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 24px 0;
+                border-bottom: 1px solid #f7f8f9;
+                .image-wrapper {
+                    .image-product {
+                        width: 134px;
+                    }
+                }
+                .text-wrapper {
+                    flex: 1;
+                    padding-left: 20px;
+                    .product-brand {
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                    }
+                    .product-name {
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+        .lq {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+        }
+    }
+}
+.order-detail {
+    background-color: red;
+}

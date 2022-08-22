@@ -31,6 +31,10 @@ const publicRoutes = [
         component: Account,
     },
     {
+        path: `${config.routes.order}/:orderID`,
+        component: Account,
+    },
+    {
         path: config.routes.address,
         component: Account,
     },

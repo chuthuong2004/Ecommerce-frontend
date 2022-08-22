@@ -211,7 +211,7 @@ export const LoginIcon = ({ width = '2.4rem', height = '2.4rem', className }) =>
         <path d="M12 3V13" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
-export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className, color = '#2E2E2E' }) => (
     <svg
         width={width}
         height={height}
@@ -222,11 +222,11 @@ export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) =
     >
         <path
             d="M10.8748 18.75C15.224 18.75 18.7498 15.2242 18.7498 10.875C18.7498 6.52576 15.224 3 10.8748 3C6.52551 3 2.99976 6.52576 2.99976 10.875C2.99976 15.2242 6.52551 18.75 10.8748 18.75Z"
-            stroke="#2E2E2E"
+            stroke={color}
             strokeLinecap="round"
             strokeLinejoin="round"
         ></path>
-        <path d="M16.4431 16.4434L20.9994 20.9997" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round"></path>
+        <path d="M16.4431 16.4434L20.9994 20.9997" stroke={color} strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );
 export const CloseIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
@@ -981,9 +981,16 @@ export const PlusStrongIcon = ({ width = '2.4rem', height = '2.4rem', className,
         <path d="M18.75 12H5.25M12 5.25V18.75V5.25Z" stroke={color} strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );
-export const ArrowRightIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke="#2E2E2E" strokeLinecap="round" strokeLinejoin="round"></path>
+export const ArrowRightIcon = ({ width = '20', height = '20', className, color = '#2E2E2E' }) => (
+    <svg
+        width={width}
+        height={height}
+        className={className}
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M7.5 3.75L13.75 10L7.5 16.25" stroke={color} strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );
 export const ArrowLeftIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (

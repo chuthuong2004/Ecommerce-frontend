@@ -1,0 +1,24 @@
+.tab-header {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f7f8f9;
+    .nav-tabs {
+        display: flex;
+        .nav-item {
+            display: flex;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0 43px 24px;
+            letter-spacing: 2px;
+            border-radius: 4px 4px 0 0;
+            border-bottom: 4px solid transparent;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            &.active {
+                border-color: var(--primary);
+            }
+        }
+    }
+}
+.tab-content {
+}

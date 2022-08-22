@@ -12,6 +12,7 @@ import './ProductImageColor.scss';
 import { trademarkProducts } from '../Home/components/Men/dataMen';
 import SlideProduct from '../../components/SlideProduct';
 import config from '../../config';
+import TabContent from '../../components/TabContent';
 const cx = classNames.bind(styles);
 const product = {
     name: 'Giày mule Playball Origin',
@@ -156,9 +157,28 @@ const Product = () => {
         prevArrow: defaultColor.images.length > 6 ? <PrevArrow /> : null,
         className: 'slide-image-product',
     };
-    console.log(defaultColor.images);
-    const [indexSelected, setIndexSelected] = useState(0);
-    const navItems = ['Chi tiết sản phẩm', 'Thông tin bảo quản', 'Giao hàng và đổi trả', 'Về thương hiệu'];
+    const navItems = [
+        {
+            _id: uuidv4(),
+            title: 'Chi tiết sản phẩm',
+            content: product.desc,
+        },
+        {
+            _id: uuidv4(),
+            title: 'Thông tin bảo quản',
+            content: product.preservation,
+        },
+        {
+            _id: uuidv4(),
+            title: 'Giao hàng và đổi trả',
+            content: product.policy,
+        },
+        {
+            _id: uuidv4(),
+            title: 'Về thương hiệu',
+            content: product.trademarkDesc,
+        },
+    ];
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container-fluid')}>
@@ -295,31 +315,7 @@ const Product = () => {
             </div>
             <div className={cx('container-fluid')}>
                 <div className={cx('product-desc')}>
-                    <div className={cx('tab-header')}>
-                        <div className={cx('nav-tabs')}>
-                            {navItems.map((navItem, index) => (
-                                <div
-                                    key={index}
-                                    onClick={() => setIndexSelected(index)}
-                                    className={cx('nav-item', indexSelected === index && 'active')}
-                                >
-                                    {navItem}
-                                </div>
-                            ))}
-                            <div className={cx('nav-line')}></div>
-                        </div>
-                    </div>
-                    <div className={cx('tab-content')}>
-                        <div>{indexSelected === 0 && product.desc}</div>
-                        <div>{indexSelected === 1 && product.preservation}</div>
-                        <div>{indexSelected === 2 && product.policy}</div>
-                        <div>{indexSelected === 3 && product.trademarkDesc}</div>
-                    </div>
-                    <div className={cx('product-desc__show-more', 'd-none')}>
-                        <span>
-                            Xem toàn bộ <ArrowDownIcon />
-                        </span>
-                    </div>
+                    <TabContent contents={navItems} />
                 </div>
             </div>
             <div className={cx('container-fluid')}>

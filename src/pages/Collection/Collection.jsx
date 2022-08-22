@@ -14,11 +14,11 @@ const Collection = () => {
     const [activeFilter, setActiveFilter] = useState(false);
     const [openSort, setOpenSort] = useState(false);
     const [openGender, setOpenGender] = useState(false);
-    const [openBrand, setOpenBrand] = useState(false);
-    const [openType, setOpenType] = useState(false);
-    const [openColor, setOpenColor] = useState(false);
-    const [openSize, setOpenSize] = useState(false);
-    const [openMaterial, setOpenMaterial] = useState(false);
+    // const [openBrand, setOpenBrand] = useState(false);
+    // const [openType, setOpenType] = useState(false);
+    // const [openColor, setOpenColor] = useState(false);
+    // const [openSize, setOpenSize] = useState(false);
+    // const [openMaterial, setOpenMaterial] = useState(false);
     const [isScrollUp, setIsScrollUp] = useState(false);
     useEffect(() => {
         const onScroll = (e) => {
