@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -13,6 +13,7 @@ import { trademarkProducts } from '../Home/components/Men/dataMen';
 import SlideProduct from '../../components/SlideProduct';
 import config from '../../config';
 import TabContent from '../../components/TabContent';
+import productApi from '../../api/productApi';
 const cx = classNames.bind(styles);
 const product = {
     name: 'Giày mule Playball Origin',
@@ -113,6 +114,28 @@ const product = {
     _id: uuidv4(),
     trademark: 'mlb',
 };
+const navItems = [
+    {
+        _id: uuidv4(),
+        title: 'Chi tiết sản phẩm',
+        content: product.desc,
+    },
+    {
+        _id: uuidv4(),
+        title: 'Thông tin bảo quản',
+        content: product.preservation,
+    },
+    {
+        _id: uuidv4(),
+        title: 'Giao hàng và đổi trả',
+        content: product.policy,
+    },
+    {
+        _id: uuidv4(),
+        title: 'Về thương hiệu',
+        content: product.trademarkDesc,
+    },
+];
 const Product = () => {
     const [defaultColor, setDefaultColor] = useState(product.colors[0]);
     const NextArrow = (props) => {
@@ -157,28 +180,22 @@ const Product = () => {
         prevArrow: defaultColor.images.length > 6 ? <PrevArrow /> : null,
         className: 'slide-image-product',
     };
-    const navItems = [
-        {
-            _id: uuidv4(),
-            title: 'Chi tiết sản phẩm',
-            content: product.desc,
-        },
-        {
-            _id: uuidv4(),
-            title: 'Thông tin bảo quản',
-            content: product.preservation,
-        },
-        {
-            _id: uuidv4(),
-            title: 'Giao hàng và đổi trả',
-            content: product.policy,
-        },
-        {
-            _id: uuidv4(),
-            title: 'Về thương hiệu',
-            content: product.trademarkDesc,
-        },
-    ];
+    const [productList, setProductList] = useState([]);
+    useEffect(() => {
+        const fetchProductList = async () => {
+            try {
+                const params = {
+                    page: 1,
+                    limit: 10,
+                };
+                const response = await productApi.getAll(params);
+                console.log(response);
+            } catch (error) {
+                console.log('Failed to fetch product list', error);
+            }
+        };
+        fetchProductList();
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container-fluid')}>
